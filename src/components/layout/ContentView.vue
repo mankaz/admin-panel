@@ -59,31 +59,13 @@
         <!--              </div>-->
         <!--            </div>-->
         <!--          </div>-->
+
         <div class="columns is-variable">
 
-          <div class="column is-4-desktop is-6-tablet setting-menu">
-            <article class="panel is-success panel-body-color">
-              <p class="panel-heading panel-heading-align">
-                تنظیمات متن
-              </p>
-              <collapse></collapse>
-
-            </article>
-          </div>
-
-          <div class="column is-8-desktop is-6-tablet">
+          <div class="column is-12-desktop is-6-tablet">
             <div class="box">
-            <div class="columns is-gapless">
-              <div class="column">
-                <textDate></textDate>
-              </div>
-              <div class="column">
-                <titleText class="title-align"></titleText>
-              </div>
-            </div>
-            <template>
-              <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
-            </template>
+              <tabs></tabs>
+
             </div>
           </div>
         </div>
@@ -96,12 +78,12 @@
 
 
 <script>
-  import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-  import '@ckeditor/ckeditor5-build-classic/build/translations/fa';
+
 
   import titleText from "../titleText";
   import collapse from "../collapse";
   import textDate from "../textDate";
+  import tabs from "../tabs";
 
   export default {
   data(){
@@ -115,7 +97,7 @@
     }
 
   },
-    components : {collapse,titleText,textDate},
+    components : {collapse,titleText,textDate,tabs},
 
   }
 </script>
