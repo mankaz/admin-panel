@@ -72,12 +72,19 @@
           </div>
 
           <div class="column is-8-desktop is-6-tablet">
-            <div  class="box">
-            <titleText class="title-align"></titleText>
+            <div class="box">
+            <div class="columns is-gapless">
+              <div class="column">
+                <textDate></textDate>
+              </div>
+              <div class="column">
+                <titleText class="title-align"></titleText>
+              </div>
+            </div>
             <template>
               <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
             </template>
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -94,6 +101,7 @@
 
   import titleText from "../titleText";
   import collapse from "../collapse";
+  import textDate from "../textDate";
 
   export default {
   data(){
@@ -107,7 +115,7 @@
     }
 
   },
-    components : {collapse,titleText},
+    components : {collapse,titleText,textDate},
 
   }
 </script>
