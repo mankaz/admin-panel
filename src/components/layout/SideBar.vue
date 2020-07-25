@@ -16,49 +16,27 @@
           src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
           alt="Lightweight UI components for Vue.js based on Bulma"
         />
-<!--        <b-menu>-->
-<!--          <b-menu-list label="Menu">-->
-<!--            <a class="navbar-item is-active">-->
-<!--              <router-link to="/" exact>dashboard</router-link>-->
-<!--            </a>-->
-<!--            <b-menu-item icon="account" label="نوشته ها">-->
-<!--              <template slot="label" slot-scope="props">-->
-
-<!--                <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
-<!--              </template>-->
-<!--              <a class="navbar-item">-->
-<!--                <router-link  to="/AddText" exact>متن جدید</router-link>-->
-<!--              </a>-->
-<!--              <a class="navbar-item">-->
-<!--                <router-link to="/about" exact>همه نوشته ها</router-link>-->
-<!--              </a>-->
-
-<!--            </b-menu-item>-->
-<!--          </b-menu-list>-->
-<!--          <b-menu-list>-->
-<!--            <ulsidebar :menuitem="menuitem"></ulsidebar>-->
-<!--          </b-menu-list>-->
-<!--        </b-menu>-->
-
-
-        <b-menu class="is-custom-mobile">
+        <b-menu>
           <b-menu-list label="Menu">
-            <b-menu-item icon="information-outline" label="Info"></b-menu-item>
-            <b-menu-item active expanded icon="settings" label="Administrator">
-              <b-menu-item icon="account" label="Users"></b-menu-item>
-              <b-menu-item icon="cellphone-link" label="Devices"></b-menu-item>
-              <b-menu-item icon="cash-multiple" label="Payments" disabled></b-menu-item>
-            </b-menu-item>
-            <b-menu-item icon="account" label="My Account">
-              <b-menu-item icon="account-box" label="Account data"></b-menu-item>
-              <b-menu-item icon="home-account" label="Addresses"></b-menu-item>
+            <a class="navbar-item is-active">
+              <router-link to="/" exact>dashboard</router-link>
+            </a>
+            <b-menu-item icon="account" label="نوشته ها">
+              <template slot="label" slot-scope="props">
+
+                <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
+              </template>
+
+                <router-link  to="/AddText" exact>متن جدید</router-link>
+
+
+                <router-link to="/about" exact>همه نوشته ها</router-link>
+
+
             </b-menu-item>
           </b-menu-list>
           <b-menu-list>
-            <b-menu-item label="Expo" icon="link"></b-menu-item>
-          </b-menu-list>
-          <b-menu-list label="Actions">
-            <b-menu-item icon="logout" label="Logout"></b-menu-item>
+            <ulsidebar :menuitem="menuitem"></ulsidebar>
           </b-menu-list>
         </b-menu>
       </div>

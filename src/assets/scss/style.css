@@ -1363,7 +1363,8 @@ body {
 
 .menu-list li ul {
   border-right: 0px solid #dbdbdb;
-  border-left: 0px solid #dbdbdb !important; }
+  border-left: 0px solid #dbdbdb !important;
+  font-family: "Yekan"; }
 
 * {
   box-sizing: border-box; }
