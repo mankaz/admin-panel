@@ -21,7 +21,7 @@
             <a class="navbar-item is-active">
               <router-link to="/" exact>dashboard</router-link>
             </a>
-            <b-menu-item active expanded icon="text-box-multiple" size="is-large" label="نوشته ها">
+            <b-menu-item  expanded icon="text-box-multiple" size="is-large" label="نوشته ها">
                 <router-link  to="/AddText" exact><b-icon icon="text-box-plus-outline" size="is-small"></b-icon>متن جدید</router-link>
                 <router-link to="/about" exact>همه نوشته ها </router-link>
             </b-menu-item>
