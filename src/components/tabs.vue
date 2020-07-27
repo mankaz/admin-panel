@@ -1,6 +1,12 @@
 <template>
   <section>
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
+      <b-tab-item label="آپلود فایل" icon="google-photos">
+
+        <div class="columns is-mobile">
+          <div class="column column is-three-fifths is-offset-one-fifth"><upload></upload></div>
+        </div>
+      </b-tab-item>
       <b-tab-item label="وضعیت" icon="google-photos">
         <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
           <div class="column">
@@ -89,6 +95,7 @@
   import categoriesCheckbox from "./categoriesCheckbox"
   import StatusVisibility from "./StatusVisibility"
   import datepicker from "./datePicker";
+  import upload from "./upload";
 
 
   export default {
@@ -107,6 +114,6 @@
         type: null,
       }
     },
-    components : {tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker}
+    components : {tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker,upload}
   }
 </script>
