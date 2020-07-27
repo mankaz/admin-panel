@@ -1360,7 +1360,8 @@ body {
 
 .lable-group {
   margin-top: 30px;
-  direction: rtl; }
+  direction: rtl;
+  font-family: IRANSans; }
 
 .menu-list li ul {
   border-right: 0px solid #dbdbdb;

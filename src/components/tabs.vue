@@ -3,46 +3,43 @@
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
       <b-tab-item label="آپلود فایل" icon="google-photos">
 
-        <div class="columns is-mobile">
-          <div class="column column is-three-fifths is-offset-one-fifth"><upload></upload></div>
+
+        <div class="columns is-centered">
+          <div class="column has-text-centered is-12">
+            <upload></upload>
+          </div>
         </div>
+
       </b-tab-item>
-      <b-tab-item label="وضعیت" icon="google-photos">
+      <b-tab-item label="زمانبندی"  icon="google-photos">
+
+        <div class="column">
+          <label class="label lable-group"><b-icon icon="calendar-clock"></b-icon>تعیین زمان نمایش</label>
+        </div>
+            <div class="columns is-centered">
+              <div class="column has-text-centered is-5">
+                <datePicker></datePicker>
+              </div>
+              <div class="column has-text-centered is-5">
+                <datePicker></datePicker>
+              </div>
+            </div>
+
         <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
           <div class="column">
             <StatusVisibility class="categories-select"></StatusVisibility>
           </div>
-
-        </div>
-        <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
-          <div class="column">
-          </div>
-
-          <div class="column">
-            <datepicker></datepicker>
-          </div>
-        </div>
-        <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
-
-          <div class="column waiting">
-            <div class="field">
-              <b-checkbox>در انتظار بررسی  </b-checkbox>
-            </div>
-          </div>
         </div>
       </b-tab-item>
       <b-tab-item label="تگ ها" icon="google-photos">
+        <label class="label lable-group"><b-icon icon="tag-outline"></b-icon>درج تگ در متن(تأثیر در سئوی سایت)</label>
         <tagInput></tagInput>
       </b-tab-item>
 
       <b-tab-item label="دسته" icon="library-music">
         <categoriesCheckbox></categoriesCheckbox>
-
-
-
         <div class="columns is-gapless">
           <div class="column">
-
           </div>
           <div class="column">
             <label class="label lable-group"><b-icon icon="expand-all-outline"></b-icon>افزودن گروه جدید  </label>
@@ -65,7 +62,7 @@
               <div  class="box">
                 <div class="columns is-gapless">
                   <div class="column">
-                    <textDate></textDate>
+                    <datePicker></datePicker>
                   </div>
                   <div class="column">
                     <titleText class="title-align"></titleText>
@@ -94,7 +91,7 @@
   import categoriesSelectList from "./categoriesSelectList"
   import categoriesCheckbox from "./categoriesCheckbox"
   import StatusVisibility from "./StatusVisibility"
-  import datepicker from "./datePicker";
+  import datePicker from "./datePicker";
   import upload from "./upload";
 
 
@@ -114,6 +111,6 @@
         type: null,
       }
     },
-    components : {tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker,upload}
+    components : {tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
   }
 </script>

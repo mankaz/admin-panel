@@ -3,9 +3,10 @@
     <date-picker
       v-model="date"
       format="jYYYY/jMM/jDD"
-      input-class="date-input"
-      name="my_date"
-      placeholder="انتخاب زمان نمایش"
+      placeholder="YYYY/MM/DD"
+      :editable="true"
+
+      class="input is-medium"
     />
   </div>
 </template>

@@ -12,7 +12,7 @@
                 size="is-large">
               </b-icon>
             </p>
-            <p>Drop your files here or click to upload</p>
+            <p>انتخاب یک یا چند فایل (کلیک کنید)  / Drag&Drop</p>
           </div>
         </section>
       </b-upload>
