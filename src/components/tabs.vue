@@ -1,18 +1,17 @@
 <template>
   <section>
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
-      <b-tab-item label="آپلود فایل" icon="google-photos">
-
-
+      <b-tab-item label="فایل" icon="file-upload-outline">
+        <div class="column">
+          <label class="label lable-group"><b-icon icon="file-upload-outline"></b-icon>بارگذاری فایل</label>
+        </div>
         <div class="columns is-centered">
           <div class="column has-text-centered is-12">
             <upload></upload>
           </div>
         </div>
-
       </b-tab-item>
-      <b-tab-item label="زمانبندی"  icon="google-photos">
-
+      <b-tab-item label="زمانبندی"  icon="calendar-clock">
         <div class="column">
           <label class="label lable-group"><b-icon icon="calendar-clock"></b-icon>تعیین زمان نمایش</label>
         </div>
@@ -24,19 +23,18 @@
                 <datePicker></datePicker>
               </div>
             </div>
-
         <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
           <div class="column">
             <StatusVisibility class="categories-select"></StatusVisibility>
           </div>
         </div>
       </b-tab-item>
-      <b-tab-item label="تگ ها" icon="google-photos">
+      <b-tab-item label="تگ ها" icon="tag-outline">
         <label class="label lable-group"><b-icon icon="tag-outline"></b-icon>درج تگ در متن(تأثیر در سئوی سایت)</label>
         <tagInput></tagInput>
       </b-tab-item>
 
-      <b-tab-item label="دسته" icon="library-music">
+      <b-tab-item label="دسته" icon="select-group">
         <categoriesCheckbox></categoriesCheckbox>
         <div class="columns is-gapless">
           <div class="column">
@@ -45,7 +43,6 @@
             <label class="label lable-group"><b-icon icon="expand-all-outline"></b-icon>افزودن گروه جدید  </label>
           </div>
         </div>
-
         <div class="columns is-gapless">
           <div class="column">
             <categoriesSelectList class="categories-select"></categoriesSelectList>
@@ -60,7 +57,7 @@
       <b-tab-item label="متن" icon="video" v-model="activeTab">
             <div class="column is-12-desktop is-6-tablet">
               <div  class="box">
-                <div class="columns is-gapless">
+                <div class="columns">
                   <div class="column">
                     <datePicker></datePicker>
                   </div>

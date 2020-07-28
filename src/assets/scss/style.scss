@@ -142,7 +142,15 @@ ul{
 }
   }
 }
-
+.tabs {
+  ul{
+    li{
+      a{
+        direction: rtl;
+      }
+    }
+  }
+}
 
 // Variables
 $primary: #8e80ef;
