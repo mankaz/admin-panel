@@ -33,7 +33,6 @@
         <label class="label lable-group"><b-icon icon="tag-outline"></b-icon>درج برچسب در متن(تأثیر در سئوی سایت)</label>
         <tagInput></tagInput>
       </b-tab-item>
-
       <b-tab-item label="دسته" icon="select-group">
         <categoriesCheckbox></categoriesCheckbox>
         <div class="columns is-gapless">
