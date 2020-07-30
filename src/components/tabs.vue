@@ -29,8 +29,8 @@
           </div>
         </div>
       </b-tab-item>
-      <b-tab-item label="تگ ها" icon="tag-outline">
-        <label class="label lable-group"><b-icon icon="tag-outline"></b-icon>درج تگ در متن(تأثیر در سئوی سایت)</label>
+      <b-tab-item label="برچسب ها" icon="tag-outline">
+        <label class="label lable-group"><b-icon icon="tag-outline"></b-icon>درج برچسب در متن(تأثیر در سئوی سایت)</label>
         <tagInput></tagInput>
       </b-tab-item>
 
