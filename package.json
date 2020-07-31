@@ -12,7 +12,6 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^20.0.0",
     "@ckeditor/ckeditor5-vue": "^1.0.1",
-    "@mdi/font": "^5.3.45",
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
     "bulma-accordion": "^2.0.1",

@@ -131,14 +131,14 @@
 .message {
   background-color: whitesmoke;
   border-radius: 4px;
-  font-size: 1rem; }
+  font-size: 1.1rem; }
   .message strong {
     color: currentColor; }
   .message a:not(.button):not(.tag):not(.dropdown-item) {
     color: currentColor;
     text-decoration: underline; }
   .message.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .message.is-medium {
     font-size: 1.25rem; }
   .message.is-large {
@@ -1065,9 +1065,9 @@ a.navbar-item,
   min-height: calc(100vh - 3.25rem); }
 
 .menu {
-  font-size: 1rem; }
+  font-size: 1.1rem; }
   .menu.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .menu.is-medium {
     font-size: 1.25rem; }
   .menu.is-large {
@@ -1090,28 +1090,27 @@ a.navbar-item,
   .menu-list li ul {
     border-right: 0px solid #dbdbdb;
     margin: 0.75em;
-    padding-right: 0.75em; }
-
-.menu-label {
-  color: #7a7a7a;
-  font-size: 0.75em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase; }
-  .menu-label:not(:first-child) {
-    margin-top: 1em; }
-  .menu-label:not(:last-child) {
-    margin-bottom: 1em; }
+    padding-right: 0.75em;
+    color: 0px solid #dbdbdb;
+    font-size: 1.5rem !important;
+    letter-spacing: 1em !important;
+    text-transform: uppercase; }
+    .menu-list li ul:not(:first-child) {
+      margin-top: 1em; }
+    .menu-list li ul:not(:last-child) {
+      margin-bottom: 1em; }
 
 .tabs {
   -webkit-overflow-scrolling: touch;
   align-items: stretch;
   display: flex;
-  font-size: 1rem;
+  font-size: 1.1rem;
   justify-content: space-between;
   overflow: hidden;
   overflow-x: auto;
   white-space: nowrap;
-  font-family: "IRANSans"; }
+  font-family: "IRANSans";
+  font-weight: 500; }
   .tabs a {
     align-items: center;
     border-bottom-color: #dbdbdb;
@@ -1205,7 +1204,7 @@ a.navbar-item,
     border-top-left-radius: 290486px;
     padding-left: 1.25em; }
   .tabs.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .tabs.is-medium {
     font-size: 1.25rem; }
   .tabs.is-large {
@@ -1323,9 +1322,9 @@ th {
   .title.is-5 {
     font-size: 1.25rem; }
   .title.is-6 {
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .title.is-7 {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
 
 .subtitle {
   color: #4a4a4a;
@@ -1348,9 +1347,45 @@ th {
   .subtitle.is-5 {
     font-size: 1.25rem; }
   .subtitle.is-6 {
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .subtitle.is-7 {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
+
+.menu {
+  font-size: 1.1rem; }
+  .menu.is-small {
+    font-size: 1rem; }
+  .menu.is-medium {
+    font-size: 1.25rem; }
+  .menu.is-large {
+    font-size: 1.5rem;
+    text-align: center !important; }
+
+.menu-list {
+  line-height: 1.25; }
+  .menu-list a {
+    border-radius: 2px;
+    color: #4a4a4a;
+    display: block;
+    padding: 0.5em 0.75em; }
+    .menu-list a:hover {
+      background-color: whitesmoke;
+      color: #363636; }
+    .menu-list a.is-active {
+      background-color: #3273dc;
+      color: #fff; }
+  .menu-list li ul {
+    border-right: 0px solid #dbdbdb;
+    margin: 0.75em;
+    padding-right: 0.75em;
+    color: 0px solid #dbdbdb;
+    font-size: 1.5rem !important;
+    letter-spacing: 1em !important;
+    text-transform: uppercase; }
+    .menu-list li ul:not(:first-child) {
+      margin-top: 1em; }
+    .menu-list li ul:not(:last-child) {
+      margin-bottom: 1em; }
 
 html,
 body {
@@ -1482,7 +1517,14 @@ body {
 .menu-list li ul {
   border-right: 0px solid #dbdbdb;
   border-left: 0px solid #dbdbdb !important;
-  font-family: "Yekan"; }
+  font-family: IRANSans; }
+.menu-list li a span.menu-label {
+  letter-spacing: 0; }
+.menu-list .is-active span.menu-label {
+  color: white !important; }
+.menu-list a.is-active {
+  background-color: #b86bff !important;
+  color: white !important; }
 
 .tabs ul li a {
   direction: rtl; }
@@ -1536,7 +1578,7 @@ ul {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: #8e80ef;
+      background-color: #004bef;
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -1552,8 +1594,8 @@ ul {
     font-weight: 500;
     transition: all .4s ease-in-out; }
     .sidebar .menu .menu-item:hover, .sidebar .menu .menu-item.active {
-      background-color: #f3f1fd;
-      color: #8e80ef; }
+      background-color: #bababa;
+      color: #7a7a7a; }
     @media screen and (max-width: 768px) {
       .sidebar .menu .menu-item {
         padding: 1em;
@@ -1562,6 +1604,7 @@ ul {
     width: 30px;
     text-align: center; }
   .sidebar .menu-label {
+    font-size: 300px !important;
     padding-left: 10px; }
     @media screen and (max-width: 768px) {
       .sidebar .menu-label {
@@ -1666,13 +1709,13 @@ ul {
   .sidebar-content .menu-item {
     direction: rtl;
     color: #121212;
-    font-family: "Yekan";
-    font-size: 1em;
+    font-family: IRANSans;
+    font-size: 1.1rem;
     font-weight: 600;
     transition: all .2s ease-in-out; }
     .sidebar-content .menu-item:hover, .sidebar-content .menu-item.active {
-      background-color: #f3f1fd;
-      color: #8e80ef; }
+      background-color: whitesmoke;
+      color: #004bef; }
     @media screen and (max-width: 768px) {
       .sidebar-content .menu-item {
         padding: 1em;

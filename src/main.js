@@ -9,8 +9,6 @@ import VuePersianDatetimePicker from 'vue-persian-datetime-picker';
 Vue.component('date-picker', VuePersianDatetimePicker);
 
 
-
-
 Vue.use(Buefy);
 Vue.use(CKEditor);
 Vue.use(VueRouter);

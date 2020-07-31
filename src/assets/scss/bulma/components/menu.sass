@@ -16,9 +16,13 @@ $menu-nested-list-padding-left: 0.75em !default
 $menu-label-color: $text-light !default
 $menu-label-font-size: 0.75em !default
 $menu-label-letter-spacing: 0.1em !default
-$menu-label-spacing: 1em !default
+$menu-label-spacing: 0 !default
+$margin-top-normal: 30px
+$margin-button-small: 10px
+
 
 .menu
+  direction: rtl
   font-size: $size-normal
   // Sizes
   &.is-small
@@ -28,6 +32,20 @@ $menu-label-spacing: 1em !default
   &.is-large
     font-size: $size-large
     text-align: center !important
+  p.menu-label
+    color: $menu-list-border-right
+    font-size: $size-small !important
+    letter-spacing: $menu-label-spacing  !important
+    margin-top: $margin-top-normal !important
+    margin-bottom: $margin-button-small !important
+    font-family: $iransans-font !important
+    text-align: right !important
+    margin-right: 10px
+    text-transform: uppercase
+    &:not(:first-child)
+    margin-top: $menu-label-spacing
+    &:not(:last-child)
+    margin-bottom: $menu-label-spacing
 
 .menu-list
 
@@ -50,12 +68,7 @@ $menu-label-spacing: 1em !default
       margin: $menu-nested-list-margin
       +ltr-property("padding", $menu-nested-list-padding-left, false)
 
-.menu-label
-  color: $menu-label-color
-  font-size: $menu-label-font-size
-  letter-spacing: $menu-label-letter-spacing
-  text-transform: uppercase
-  &:not(:first-child)
-    margin-top: $menu-label-spacing
-  &:not(:last-child)
-    margin-bottom: $menu-label-spacing
+
+
+
+

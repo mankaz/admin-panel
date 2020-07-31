@@ -1,9 +1,12 @@
 <template lang="html">
   <li>
-    <a href="#" class="menu-item">
-      <span  :class="[faClass(li.icon)]"></span>
-      <span class="menu-label"> {{li.title}} </span>
-    </a>
+    <router-link :to=li.link class="menu-item">
+
+        <span  :class="[faClass(li.icon)]"></span>
+        <span class="menu-label"> {{li.title}} </span>
+
+    </router-link>
+
   </li>
 </template>
 

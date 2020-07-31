@@ -138,10 +138,25 @@ body {
 ul{
   border-right: $menu-list-border-right;
   border-left: $menu-list-border-right !important;
-  font-family: $font_yekan;
+  font-family: $font_IranSAns;
 }
+    a{
+      span.menu-label{
+letter-spacing: 0;
+      }
+    }
+  }
+  .is-active{
+    span.menu-label{
+      color: $white !important;
+    }
+  }
+    a.is-active{
+      background-color:$purple !important;
+      color: $white !important;
   }
 }
+
 .tabs {
   ul{
     li{
@@ -153,7 +168,7 @@ ul{
 }
 
 // Variables
-$primary: #8e80ef;
+$primary: #004bef;
 $secondary: #ffaa1a;
 $primary-text: #121212;
 $secondary-text: #dbdbdb;
@@ -275,8 +290,8 @@ ul {
       transition: all .4s ease-in-out;
       &:hover,
       &.active {
-        background-color: lighten($primary, 25);
-        color: $primary;
+        background-color: lighten($grey, 25);
+        color: $grey;
       }
       @media screen and (max-width:768px) {
         padding: 1em;
@@ -289,6 +304,7 @@ ul {
     text-align: center;
   }
   .menu-label {
+    font-size: 300px !important;
     padding-left: 10px;
     @media screen and (max-width: 768px) {
       visibility: hidden;
@@ -407,6 +423,7 @@ ul {
   }
 
 }
+
 .sidebar-content{
   width: 15% !important;
 text-align: center;
@@ -414,13 +431,14 @@ text-align: center;
   .menu-item {
     direction: rtl;
     color: $primary-text;
-    font-family: $font_yekan;
-    font-size: 1em;
+    font-family: $font_IranSAns;
+    font-size: $size-6;
     font-weight: $weight-semibold;
     transition: all .2s ease-in-out;
+
     &:hover,
     &.active {
-      background-color: lighten($primary, 25);
+      background-color: lighten($grey-light, 25);
       color: $primary;
     }
     @media screen and (max-width:768px) {

@@ -9,7 +9,6 @@
       :right="right"
       :open.sync="open"
       :mobile="mobile"
-
     >
       <div class="p-1">
         <img
@@ -17,16 +16,20 @@
           alt="Lightweight UI components for Vue.js based on Bulma"
         />
         <b-menu>
-          <b-menu-list label="Menu">
-            <a class="navbar-item is-active">
-              <router-link to="/" exact>dashboard</router-link>
-            </a>
-            <b-menu-item  expanded icon="text-box-multiple" size="is-large" label="نوشته ها">
-                <router-link  to="/AddText" exact><b-icon icon="text-box-plus-outline" size="is-small"></b-icon>متن جدید</router-link>
-                <router-link to="/about" exact>همه نوشته ها </router-link>
-            </b-menu-item>
-          </b-menu-list>
-          <b-menu-list>
+<!--          <b-menu-list label="Menu">-->
+<!--            <a class="navbar-item is-active">-->
+<!--              <router-link to="/" exact>dashboard</router-link>-->
+<!--            </a>-->
+<!--            <b-menu-item  expanded icon="text-box-multiple" size="is-large" label="نوشته ها">-->
+<!--                <router-link  to="/AddText" exact><b-icon icon="text-box-plus-outline" size="is-small"></b-icon>متن جدید</router-link>-->
+<!--                <router-link to="/about" exact>همه نوشته ها </router-link>-->
+<!--            </b-menu-item>-->
+<!--          </b-menu-list>-->
+<!--          <b-menu-list>-->
+<!--            <ulsidebar :menuitem="menuitem"></ulsidebar>-->
+<!--          </b-menu-list>-->
+
+          <b-menu-list icon="text-box-outline" label="متن">
             <ulsidebar :menuitem="menuitem"></ulsidebar>
           </b-menu-list>
         </b-menu>
@@ -63,8 +66,8 @@
         mobile: "reduce",
         reduce: true,
         menuitem:[
-          {title : 'داشبورد',icon:'tachometer-alt'},
-          {title : ' محصولات',icon: 'cogs'}
+          {title : 'متن جدید',icon:'tachometer-alt',link:'/AddText'},
+          {title : '  نوشته ها',icon: 'cogs',link:'/about'}
         ],
       }
     },

@@ -109,14 +109,14 @@
 .message {
   background-color: whitesmoke;
   border-radius: 4px;
-  font-size: 1rem; }
+  font-size: 1.1rem; }
   .message strong {
     color: currentColor; }
   .message a:not(.button):not(.tag):not(.dropdown-item) {
     color: currentColor;
     text-decoration: underline; }
   .message.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .message.is-medium {
     font-size: 1.25rem; }
   .message.is-large {
@@ -1027,14 +1027,27 @@ a.navbar-item,
   min-height: calc(100vh - 3.25rem); }
 
 .menu {
-  font-size: 1rem; }
+  direction: rtl;
+  font-size: 1.1rem; }
   .menu.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .menu.is-medium {
     font-size: 1.25rem; }
   .menu.is-large {
     font-size: 1.5rem;
     text-align: center !important; }
+  .menu p.menu-label {
+    color: 0px solid #dbdbdb;
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+    font-family: "IRANSans" !important;
+    text-align: right !important;
+    margin-right: 10px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .menu-list {
   line-height: 1.25; }
@@ -1054,21 +1067,11 @@ a.navbar-item,
     margin: 0.75em;
     padding-right: 0.75em; }
 
-.menu-label {
-  color: #7a7a7a;
-  font-size: 0.75em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase; }
-  .menu-label:not(:first-child) {
-    margin-top: 1em; }
-  .menu-label:not(:last-child) {
-    margin-bottom: 1em; }
-
 .tabs {
   -webkit-overflow-scrolling: touch;
   align-items: stretch;
   display: flex;
-  font-size: 1rem;
+  font-size: 1.1rem;
   justify-content: space-between;
   overflow: hidden;
   overflow-x: auto;
@@ -1168,7 +1171,7 @@ a.navbar-item,
     border-top-left-radius: 290486px;
     padding-left: 1.25em; }
   .tabs.is-small {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
   .tabs.is-medium {
     font-size: 1.25rem; }
   .tabs.is-large {
@@ -1286,9 +1289,9 @@ th {
   .title.is-5 {
     font-size: 1.25rem; }
   .title.is-6 {
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .title.is-7 {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
 
 .subtitle {
   color: #4a4a4a;
@@ -1311,6 +1314,47 @@ th {
   .subtitle.is-5 {
     font-size: 1.25rem; }
   .subtitle.is-6 {
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .subtitle.is-7 {
-    font-size: 0.75rem; }
+    font-size: 1rem; }
+
+.menu {
+  direction: rtl;
+  font-size: 1.1rem; }
+  .menu.is-small {
+    font-size: 1rem; }
+  .menu.is-medium {
+    font-size: 1.25rem; }
+  .menu.is-large {
+    font-size: 1.5rem;
+    text-align: center !important; }
+  .menu p.menu-label {
+    color: 0px solid #dbdbdb;
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+    font-family: "IRANSans" !important;
+    text-align: right !important;
+    margin-right: 10px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.menu-list {
+  line-height: 1.25; }
+  .menu-list a {
+    border-radius: 2px;
+    color: #4a4a4a;
+    display: block;
+    padding: 0.5em 0.75em; }
+    .menu-list a:hover {
+      background-color: whitesmoke;
+      color: #363636; }
+    .menu-list a.is-active {
+      background-color: #3273dc;
+      color: #fff; }
+  .menu-list li ul {
+    border-right: 0px solid #dbdbdb;
+    margin: 0.75em;
+    padding-right: 0.75em; }
