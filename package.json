@@ -17,6 +17,7 @@
     "bulma-accordion": "^2.0.1",
     "d": "^1.0.1",
     "vue": "^2.5.11",
+    "vue-material-icon": "^1.0.1",
     "vue-persian-datetime-picker": "^2.1.6"
   },
   "browserslist": [

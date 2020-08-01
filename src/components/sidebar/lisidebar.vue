@@ -1,8 +1,7 @@
 <template lang="html">
   <li>
     <router-link :to=li.link class="menu-item">
-
-        <span  :class="[faClass(li.icon)]"></span>
+      <i :class="[faClass(li.icon)]" aria-hidden="true"></i>
         <span class="menu-label"> {{li.title}} </span>
 
     </router-link>
@@ -15,7 +14,7 @@
     props:['li','index'],
     methods: {
       faClass(icon) {
-        return `menu-icon fa fa-${icon}`;
+        return `mdi mdi-${icon}`;
       }
     }
   }

@@ -17,8 +17,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!--    <div class="is-variable is-0">-->
+
+    <!--    <div class="is-variable is-0">-->
 
 <!--      <div class="level-right">-->
 

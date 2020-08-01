@@ -66,8 +66,8 @@
         mobile: "reduce",
         reduce: true,
         menuitem:[
-          {title : 'متن جدید',icon:'tachometer-alt',link:'/AddText'},
-          {title : '  نوشته ها',icon: 'cogs',link:'/about'}
+          {title : 'متن جدید',icon:'text-box-plus-outline',link:'/AddText'},
+          {title : '  نوشته ها',icon: 'text-box-multiple-outline',link:'/about'}
         ],
       }
     },

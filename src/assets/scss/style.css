@@ -1065,6 +1065,7 @@ a.navbar-item,
   min-height: calc(100vh - 3.25rem); }
 
 .menu {
+  direction: rtl;
   font-size: 1.1rem; }
   .menu.is-small {
     font-size: 1rem; }
@@ -1073,6 +1074,18 @@ a.navbar-item,
   .menu.is-large {
     font-size: 1.5rem;
     text-align: center !important; }
+  .menu p.menu-label {
+    color: 0px solid #dbdbdb;
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+    font-family: "IRANSans" !important;
+    text-align: right !important;
+    margin-right: 10px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .menu-list {
   line-height: 1.25; }
@@ -1090,15 +1103,7 @@ a.navbar-item,
   .menu-list li ul {
     border-right: 0px solid #dbdbdb;
     margin: 0.75em;
-    padding-right: 0.75em;
-    color: 0px solid #dbdbdb;
-    font-size: 1.5rem !important;
-    letter-spacing: 1em !important;
-    text-transform: uppercase; }
-    .menu-list li ul:not(:first-child) {
-      margin-top: 1em; }
-    .menu-list li ul:not(:last-child) {
-      margin-bottom: 1em; }
+    padding-right: 0.75em; }
 
 .tabs {
   -webkit-overflow-scrolling: touch;
@@ -1352,6 +1357,7 @@ th {
     font-size: 1rem; }
 
 .menu {
+  direction: rtl;
   font-size: 1.1rem; }
   .menu.is-small {
     font-size: 1rem; }
@@ -1360,6 +1366,18 @@ th {
   .menu.is-large {
     font-size: 1.5rem;
     text-align: center !important; }
+  .menu p.menu-label {
+    color: 0px solid #dbdbdb;
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+    font-family: "IRANSans" !important;
+    text-align: right !important;
+    margin-right: 10px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .menu-list {
   line-height: 1.25; }
@@ -1377,15 +1395,7 @@ th {
   .menu-list li ul {
     border-right: 0px solid #dbdbdb;
     margin: 0.75em;
-    padding-right: 0.75em;
-    color: 0px solid #dbdbdb;
-    font-size: 1.5rem !important;
-    letter-spacing: 1em !important;
-    text-transform: uppercase; }
-    .menu-list li ul:not(:first-child) {
-      margin-top: 1em; }
-    .menu-list li ul:not(:last-child) {
-      margin-bottom: 1em; }
+    padding-right: 0.75em; }
 
 html,
 body {
@@ -1529,6 +1539,22 @@ body {
 .tabs ul li a {
   direction: rtl; }
 
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-image: url(http://html.designstream.co.in/pick/html-rtl/dist/images/author.jpg);
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 10px; }
+
+.arrow-down {
+  margin-left: 2px;
+  margin-top: 2px; }
+
 * {
   box-sizing: border-box; }
 
@@ -1670,16 +1696,12 @@ ul {
     .site-header .user-info::after {
       transform: rotate(-45deg) translateY(-3px); }
     .site-header .user-info .user-avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 4px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
       background-color: #ffaa1a;
       color: #ffffff;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 10px; }
+      font-size: 14px; }
     .site-header .user-info .user-name {
       font-size: 14px;
       font-weight: 500;

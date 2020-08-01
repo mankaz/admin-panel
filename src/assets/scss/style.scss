@@ -166,6 +166,22 @@ letter-spacing: 0;
     }
   }
 }
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-image: url(http://html.designstream.co.in/pick/html-rtl/dist/images/author.jpg);
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 10px;
+}
+.arrow-down {
+  margin-left: 2px;
+  margin-top: 2px;
+}
 
 // Variables
 $primary: #004bef;
@@ -383,16 +399,13 @@ ul {
       transform: rotate(-45deg) translateY(-3px);
     }
     .user-avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 4px;
+      width: 100px;
+      height:100px;
+      border-radius: 50%;
       background-color: $secondary;
       color: #ffffff;
       font-size: 14px;
-      @include d-flex();
-      @include d-flex-v-center();
-      @include d-flex-h-center();
-      margin-right: 10px;
+
     }
     .user-name {
       font-size: 14px;
