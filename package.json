@@ -10,14 +10,12 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^20.0.0",
-    "@ckeditor/ckeditor5-vue": "^1.0.1",
+    "@tinymce/tinymce-vue": "^3.2.2",
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
     "bulma-accordion": "^2.0.1",
     "d": "^1.0.1",
     "vue": "^2.5.11",
-    "vue-material-icon": "^1.0.1",
     "vue-persian-datetime-picker": "^2.1.6"
   },
   "browserslist": [

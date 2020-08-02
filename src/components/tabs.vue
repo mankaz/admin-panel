@@ -63,9 +63,33 @@
                   <div class="column">
                     <titleText class="title-align"></titleText>
                   </div>
+
                 </div>
+<!--                <template>-->
+<!--                  <ckeditor   :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>-->
+<!--                </template>-->
                 <template>
-                  <ckeditor   :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+
+                  <editor
+                    v-model="editorData"
+                    api-key="pedln6o1mujboalv12lv7k9ompxknzeetlwqzeyy1ktvq8yu"
+
+                    :init="{
+                     height: 500,
+                     menubar: false,
+                     directionality : 'rtl',
+                     plugins: [
+                     'advlist autolink lists link image charmap print preview anchor',
+                     'searchreplace visualblocks code fullscreen',
+                     'insertdatetime media table paste code help wordcount',
+
+                     ],
+                     toolbar:
+                       'undo redo | formatselect | bold italic backcolor  image| \
+                       alignleft aligncenter alignright alignjustify | \
+                       bullist numlist outdent indent | removeformat | help'
+                      }"
+                  />
                 </template>
               </div>
               <b-button type="is-info" icon-right="text-box-plus-outline" class="addtext-btn" expanded>تایید و افزودن متن </b-button>
@@ -79,8 +103,6 @@
 
 <script>
   import tagInput from "./tagInput";
-  import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-  import '@ckeditor/ckeditor5-build-classic/build/translations/fa';
   import titleText from "./titleText";
   import textDate from "./textDate";
   import categoriesName from "./categoriesName";
@@ -89,17 +111,17 @@
   import StatusVisibility from "./StatusVisibility"
   import datePicker from "./datePicker";
   import upload from "./upload";
-
+  import Editor from '@tinymce/tinymce-vue'
 
   export default {
     data() {
       return {
-        editor: ClassicEditor,
+        // editor: ClassicEditor,
         editorData: '<p>Content of the editor.</p>',
-        editorConfig: {
-          language: 'fa',
-          // The configuration of the editor.
-        },
+        // editorConfig: {
+        //   language: 'fa',
+        //   // The configuration of the editor.
+        // },
         activeTab: 0,
         expanded: false,
         atRight: true,
@@ -107,6 +129,6 @@
         type: null,
       }
     },
-    components : {tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
+    components : {Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
   }
 </script>
