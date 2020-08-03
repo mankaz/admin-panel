@@ -1555,6 +1555,13 @@ body {
   margin-left: 2px;
   margin-top: 2px; }
 
+.menu-builder {
+  justify-content: flex-end; }
+  .menu-builder input {
+    text-align: center !important; }
+  .menu-builder span {
+    direction: rtl; }
+
 * {
   box-sizing: border-box; }
 

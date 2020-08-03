@@ -3,6 +3,12 @@
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
       <b-tab-item label="فایل" icon="file-upload-outline">
         <div class="column">
+          <menuBuilder>
+          </menuBuilder>
+        </div>
+      </b-tab-item>
+      <b-tab-item label="فایل" icon="file-upload-outline">
+        <div class="column">
           <label class="label lable-group"><b-icon icon="file-upload-outline"></b-icon>بارگذاری فایل</label>
         </div>
         <div class="columns is-centered">
@@ -63,11 +69,11 @@
                   <div class="column">
                     <titleText class="title-align"></titleText>
                   </div>
-
                 </div>
 <!--                <template>-->
 <!--                  <ckeditor   :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>-->
 <!--                </template>-->
+
                 <template>
 
                   <editor
@@ -91,6 +97,7 @@
                       }"
                   />
                 </template>
+
               </div>
               <b-button type="is-info" icon-right="text-box-plus-outline" class="addtext-btn" expanded>تایید و افزودن متن </b-button>
 
@@ -112,6 +119,7 @@
   import datePicker from "./datePicker";
   import upload from "./upload";
   import Editor from '@tinymce/tinymce-vue'
+  import menuBuilder from "./menuBuilder";
 
   export default {
     data() {
@@ -129,6 +137,6 @@
         type: null,
       }
     },
-    components : {Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
+    components : {menuBuilder,Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
   }
 </script>

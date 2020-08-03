@@ -182,7 +182,15 @@ letter-spacing: 0;
   margin-left: 2px;
   margin-top: 2px;
 }
-
+.menu-builder{
+  justify-content: flex-end;
+  input {
+    text-align: center !important;
+  }
+  span{
+    direction: rtl;
+  }
+}
 // Variables
 $primary: #004bef;
 $secondary: #ffaa1a;
