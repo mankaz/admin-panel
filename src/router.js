@@ -2,7 +2,7 @@ import VueRouter from "vue-router";
 let routes = [
   {
     path : '/',
-    component : require('./components/layout/ContentView.vue').default
+    component : require('./components/layout/Content.vue').default
   },
   {
     path: '/about',
@@ -11,6 +11,10 @@ let routes = [
   {
     path: '/AddText',
     component: require('./components/pages/AddText.vue').default
+  },
+  {
+    path: '/menuBuilderView',
+    component: require('./components/pages/menuBuilderView.vue').default
   }
 
 ]

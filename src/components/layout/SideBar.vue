@@ -67,7 +67,8 @@
         reduce: true,
         menuitem:[
           {title : 'متن جدید',icon:'text-box-plus-outline',link:'/AddText'},
-          {title : '  نوشته ها',icon: 'text-box-multiple-outline',link:'/about'}
+          {title : '  نوشته ها',icon: 'text-box-multiple-outline',link:'/about',},
+          {title : 'منو ساز',icon: 'text-box-multiple-outline',link:'/menuBuilderView',}
         ],
       }
     },

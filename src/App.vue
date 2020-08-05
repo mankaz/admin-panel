@@ -85,7 +85,7 @@
 <script>
   import './assets/scss/style.css'
   import './assets/scss/custom.css'
-  import ContentView from "./components/layout/ContentView.vue";
+  import ContentView from "./components/layout/Content.vue";
   import SideBar from "./components/layout/SideBar.vue";
   import Navbar from "./components/layout/Navbar.vue";
 
