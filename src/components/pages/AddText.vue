@@ -33,8 +33,6 @@
   export default {
     data(){
       return{
-        editor: ClassicEditor,
-        editorData: '<p>Content of the editor.</p>',
         editorConfig: {
           language: 'fa',
           // The configuration of the editor.

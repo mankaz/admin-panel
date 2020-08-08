@@ -3,8 +3,12 @@
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
       <b-tab-item label="فایل" icon="file-upload-outline">
         <div class="column">
-          <menuBuilder>
-          </menuBuilder>
+<draggable></draggable>
+        </div>
+      </b-tab-item>
+      <b-tab-item label="فایل" icon="file-upload-outline">
+        <div class="column">
+          <menuBuilderVueDraggable></menuBuilderVueDraggable>
         </div>
       </b-tab-item>
       <b-tab-item label="فایل" icon="file-upload-outline">
@@ -119,7 +123,8 @@
   import datePicker from "./datePicker";
   import upload from "./upload";
   import Editor from '@tinymce/tinymce-vue'
-  import menuBuilder from "./menuBuilder";
+  import menuBuilderVueDraggable from "./menuBuilderVueDraggable";
+  import Draggable from "./draggable";
 
   export default {
     data() {
@@ -137,6 +142,8 @@
         type: null,
       }
     },
-    components : {menuBuilder,Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
+    components : {
+      Draggable,
+      menuBuilderVueDraggable,Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
   }
 </script>

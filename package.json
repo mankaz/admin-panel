@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^3.2.2",
+    "@websanova/vue-store": "^1.0.5-beta",
     "axios": "^0.19.2",
     "buefy": "^0.8.20",
     "bulma-accordion": "^2.0.1",
     "d": "^1.0.1",
+    "elements": "^0.6.0",
     "sl-vue-tree": "^1.8.4",
     "vue": "^2.6.11",
-    "vue-persian-datetime-picker": "^2.1.6"
+    "vue-nestable": "^2.5.3",
+    "vue-persian-datetime-picker": "^2.1.6",
+    "vuedraggable": "^2.24.0"
   },
   "browserslist": [
     "> 1%",
