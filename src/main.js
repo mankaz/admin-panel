@@ -14,6 +14,7 @@ import elements from 'elements';
 import VueNestable from 'vue-nestable'
 
 
+
 Vue.use(Buefy);
 Vue.use(VueRouter);
 Vue.use(draggable);
@@ -21,6 +22,7 @@ Vue.use(VueStore);
 Vue.use(elements);
 Vue.use(VueNestable)
 Vue.use(VuePersianDatetimePicker);
+
 Vue.component('sl-vue-tree', slVueTree);
 
 new Vue({

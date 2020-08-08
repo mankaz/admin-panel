@@ -8,7 +8,12 @@
           برچسب ها
           <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
         </template>
-        <tagInput></tagInput>
+        <div v-for="(list , index) in dataNodes" :key="list.id">
+          <label>{{list.title}}</label>
+          <input id="check" type="checkbox" :name="list.text"  :value="list" />
+        </div>
+
+
       </b-menu-item>
       <b-menu-item icon="settings" >
         <template slot="label" slot-scope="props">
@@ -64,14 +69,41 @@
   import categoriesCheckbox from "./categoriesCheckbox"
   import StatusVisibility from "./StatusVisibility"
   import datepicker from "./datePicker";
-
+   import  mixin from "../mixin"
 
   export default {
+
     data() {
       return {
+
+        // dataNodes: [
+        //   {
+        //     title: 'kalam 🥦',
+        //     isExpanded: true
+        //   },
+        //   {
+        //     title: 'pear 🍐',
+        //     isLeaf: true,
+        //     data: {visible: false}
+        //   },
+        //   {
+        //     title: 'Grapes 🍇'
+        //   },
+        //   {
+        //     title: 'karrot 🥕',
+        //     isExpanded: true,
+        //   }
+        // ],
+
         isActive: true
       }
     },
-    components : {tagInput,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker}
+    components : {tagInput,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker
+    },
+    methods:{
+
+    },
+    mixins : [mixin]
   }
+
 </script>

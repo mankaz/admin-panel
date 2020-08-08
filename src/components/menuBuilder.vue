@@ -12,11 +12,12 @@
             <div class="column has-text-centered is-5">
 
               <div @click="contextMenuIsVisible = false">
-                <button id="submit" @click="serialize">
-                  New Find
-                </button>
+
                 <div class="last-event row">
                   Last event: {{ lastEvent }}
+                </div>
+                <div class="json-preview">
+                  <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>
                 </div>
                 <b-field>
                   <b-input placeholder="عنوان منو" size="is-medium" icon="account" ></b-input>
@@ -56,6 +57,7 @@
                       <template slot="draginfo">
                         {{selectedNodesTitle}}
                       </template>
+
                     </sl-vue-tree>
                   </div>
                   <div class="contextmenu" ref="contextmenu" v-show="contextMenuIsVisible">
@@ -65,13 +67,79 @@
               </div>
             </div>
             <div class="column has-text-centered is-5">
-                  <div v-for="(list , index) in list" :key="list.id">
-                    <label>{{list.title}}</label>
-                    <input id="check" type="checkbox" :name="list.text"  :value="list" />
-                  </div>
-              <div class="json-preview">
-                <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>
+              <div class="box">
+                <button id="submit" @click="serialize">
+                  New Find
+                </button>
+                <collapse></collapse>
+
               </div>
+
+
+
+<!--              <b-menu class="menu-collapse">-->
+<!--                <b-menu-list>-->
+<!--                  <b-menu-item icon="settings" >-->
+<!--                    <template slot="label" slot-scope="props">-->
+<!--                      برچسب ها-->
+<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
+<!--                    </template>-->
+<!--                    <div v-for="(list , index) in dataNodes" :key="list.id">-->
+<!--                      <label>{{list.title}}</label>-->
+<!--                      <input id="check" type="checkbox" :name="list.text"  :value="list" />-->
+<!--                    </div>-->
+<!--                    <div class="json-preview">-->
+<!--                      <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>-->
+<!--                    </div>-->
+<!--                    <button id="submit" @click="serialize">-->
+<!--                      New Find-->
+<!--                    </button>-->
+<!--                  </b-menu-item>-->
+<!--                  <b-menu-item icon="settings" >-->
+<!--                    <template slot="label" slot-scope="props">-->
+<!--                      دسته ها-->
+<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
+<!--                    </template>-->
+<!--                    <div>-->
+<!--                      <categoriesCheckbox></categoriesCheckbox>-->
+
+<!--                    </div>-->
+<!--                    <label class="label lable-group">افزودن گروه جدید  <b-icon icon="expand-all-outline"></b-icon></label>-->
+<!--                    <categoriesName class="categories-name"></categoriesName>-->
+<!--                    <categoriesSelectList class="categories-select"></categoriesSelectList>-->
+<!--                    <b-button type="is-success" class="categoriesBtn">افزودن دسته جدید</b-button>-->
+<!--                  </b-menu-item>-->
+<!--                  <b-menu-item icon="settings" >-->
+<!--                    <template slot="label" slot-scope="props">-->
+<!--                      وضعیت و مشاهده پذیری-->
+<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
+<!--                    </template>-->
+<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
+<!--                      <div class="column">-->
+<!--                        <StatusVisibility class="categories-select"></StatusVisibility>-->
+<!--                      </div>-->
+
+<!--                    </div>-->
+<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
+<!--                      <div class="column">-->
+<!--                      </div>-->
+
+<!--                      <div class="column">-->
+<!--                        <datepicker></datepicker>-->
+<!--                      </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
+
+<!--                      <div class="column waiting">-->
+<!--                        <div class="field">-->
+<!--                          <b-checkbox>در انتظار بررسی  </b-checkbox>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </b-menu-item>-->
+<!--                </b-menu-list>-->
+<!--              </b-menu>-->
             </div>
           </div>
         </div>
@@ -81,7 +149,8 @@
 </template>
 
 <script>
-
+import collapse from "./collapse";
+ import mixin from "../mixin";
   export default {
 
     data() {
@@ -90,7 +159,7 @@
         nodes:[
 
         ],
-        list:[
+        dataNodes: [
           {
             title: 'kalam 🥦',
             isExpanded: true
@@ -108,26 +177,29 @@
             isExpanded: true,
           }
         ],
+
         contextMenuIsVisible: false,
         lastEvent: 'No last event',
-        selectedNodesTitle: ''
+        selectedNodesTitle: '',
       }
+
     },
     mounted() {
       // expose instance to the global namespace
       window.slVueTree = this.$refs.slVueTree;
     },
     methods: {
-      serialize() {
 
-        let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
-
-        for (let i = 0; i < checkboxes.length; i++) {
-
-          console.log(JSON.stringify(checkboxes[i]._value))
-          JSON.stringify(this.nodes.push(checkboxes[i]._value))
-        }
-      },
+//       serialize() {
+//
+//         let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+//
+//         for (let i = 0; i < checkboxes.length; i++) {
+// alert(checkboxes[i]._value)
+//           console.log(JSON.stringify(checkboxes[i]._value))
+//           JSON.stringify(this.nodes.push(checkboxes[i]._value))
+//         }
+//       },
       toggleVisibility: function (event, node) {
         const slVueTree = this.$refs.slVueTree;
         event.stopPropagation();
@@ -170,6 +242,11 @@
         $slVueTree.remove(paths);
       }
     },
+
+    components : {
+      collapse
+    },
+ mixins :[mixin]
   }
 </script>
 
