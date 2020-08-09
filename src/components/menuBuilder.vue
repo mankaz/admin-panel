@@ -13,16 +13,16 @@
 
               <div @click="contextMenuIsVisible = false">
 
-                <div class="last-event row">
-                  Last event: {{ lastEvent }}
-                </div>
-                <div class="json-preview">
-                  <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>
-                </div>
+<!--                <div class="last-event row">-->
+<!--                  Last event: {{ lastEvent }}-->
+<!--                </div>-->
+<!--                <div class="json-preview">-->
+<!--                  <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>-->
+<!--                </div>-->
                 <b-field>
                   <b-input placeholder="عنوان منو" size="is-medium" icon="account" ></b-input>
                 </b-field>
-                <div class="row">
+                <div class="box">
                   <div class="tree-container">
                     <sl-vue-tree
                       v-model="nodes"
@@ -60,6 +60,8 @@
 
                     </sl-vue-tree>
                   </div>
+
+
                   <div class="contextmenu" ref="contextmenu" v-show="contextMenuIsVisible">
                     <div @click="removeNode">حذف</div>
                   </div>
@@ -68,78 +70,72 @@
             </div>
             <div class="column has-text-centered is-5">
               <div class="box">
-                <button id="submit" @click="serialize">
-                  New Find
-                </button>
-                <collapse></collapse>
 
+                <b-menu class="menu-collapse">
+                  <b-menu-list>
+                    <b-menu-item icon="settings" >
+                      <template slot="label" slot-scope="props">
+                        برچسب ها
+                        <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
+                      </template>
+
+                      <div class="field categories-checkbox" v-for="(list , index) in dataNodes" :key="list.id">
+<!--                        <label>{{list.title}}</label>-->
+<!--                        <input id="check" type="checkbox" :name="list.text"  :value="list" />-->
+                        <div class="field b-checkbox checkbox"> <b-checkbox :native-value="list" :value="false" :name="list.text" type="is-info"> {{list.title}} </b-checkbox>
+                        </div>
+
+                      </div>
+                      <b-button @click="serialize" size="is-small" type="is-success">افزودن به منو</b-button>
+
+                    </b-menu-item>
+                    <b-menu-item icon="settings" >
+                      <template slot="label" slot-scope="props">
+                        دسته ها
+                        <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
+                      </template>
+                      <div>
+                        <categoriesCheckbox></categoriesCheckbox>
+
+                      </div>
+                      <label class="label lable-group">افزودن گروه جدید  <b-icon icon="expand-all-outline"></b-icon></label>
+                      <categoriesName class="categories-name"></categoriesName>
+                      <categoriesSelectList class="categories-select"></categoriesSelectList>
+                      <b-button type="is-success" class="categoriesBtn">افزودن دسته جدید</b-button>
+                    </b-menu-item>
+                    <b-menu-item icon="settings" >
+                      <template slot="label" slot-scope="props">
+                        وضعیت و مشاهده پذیری
+                        <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
+                      </template>
+                      <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
+                        <div class="column">
+                          <StatusVisibility class="categories-select"></StatusVisibility>
+                        </div>
+
+                      </div>
+                      <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
+                        <div class="column">
+                        </div>
+
+                        <div class="column">
+                          <datepicker></datepicker>
+                        </div>
+                      </div>
+
+                      <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">
+
+                        <div class="column waiting">
+                          <div class="field">
+                            <b-checkbox>در انتظار بررسی  </b-checkbox>
+                          </div>
+                        </div>
+                      </div>
+                    </b-menu-item>
+                  </b-menu-list>
+
+                </b-menu>
               </div>
-
-
-
-<!--              <b-menu class="menu-collapse">-->
-<!--                <b-menu-list>-->
-<!--                  <b-menu-item icon="settings" >-->
-<!--                    <template slot="label" slot-scope="props">-->
-<!--                      برچسب ها-->
-<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
-<!--                    </template>-->
-<!--                    <div v-for="(list , index) in dataNodes" :key="list.id">-->
-<!--                      <label>{{list.title}}</label>-->
-<!--                      <input id="check" type="checkbox" :name="list.text"  :value="list" />-->
-<!--                    </div>-->
-<!--                    <div class="json-preview">-->
-<!--                      <pre>{{ JSON.stringify(nodes, null, 4)}}</pre>-->
-<!--                    </div>-->
-<!--                    <button id="submit" @click="serialize">-->
-<!--                      New Find-->
-<!--                    </button>-->
-<!--                  </b-menu-item>-->
-<!--                  <b-menu-item icon="settings" >-->
-<!--                    <template slot="label" slot-scope="props">-->
-<!--                      دسته ها-->
-<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
-<!--                    </template>-->
-<!--                    <div>-->
-<!--                      <categoriesCheckbox></categoriesCheckbox>-->
-
-<!--                    </div>-->
-<!--                    <label class="label lable-group">افزودن گروه جدید  <b-icon icon="expand-all-outline"></b-icon></label>-->
-<!--                    <categoriesName class="categories-name"></categoriesName>-->
-<!--                    <categoriesSelectList class="categories-select"></categoriesSelectList>-->
-<!--                    <b-button type="is-success" class="categoriesBtn">افزودن دسته جدید</b-button>-->
-<!--                  </b-menu-item>-->
-<!--                  <b-menu-item icon="settings" >-->
-<!--                    <template slot="label" slot-scope="props">-->
-<!--                      وضعیت و مشاهده پذیری-->
-<!--                      <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>-->
-<!--                    </template>-->
-<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
-<!--                      <div class="column">-->
-<!--                        <StatusVisibility class="categories-select"></StatusVisibility>-->
-<!--                      </div>-->
-
-<!--                    </div>-->
-<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
-<!--                      <div class="column">-->
-<!--                      </div>-->
-
-<!--                      <div class="column">-->
-<!--                        <datepicker></datepicker>-->
-<!--                      </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-8-fullhd">-->
-
-<!--                      <div class="column waiting">-->
-<!--                        <div class="field">-->
-<!--                          <b-checkbox>در انتظار بررسی  </b-checkbox>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </b-menu-item>-->
-<!--                </b-menu-list>-->
-<!--              </b-menu>-->
             </div>
           </div>
         </div>
@@ -149,8 +145,15 @@
 </template>
 
 <script>
-import collapse from "./collapse";
- import mixin from "../mixin";
+
+
+
+  import categoriesName from "./categoriesName";
+  import categoriesSelectList from "./categoriesSelectList"
+  import categoriesCheckbox from "./categoriesCheckbox"
+  import StatusVisibility from "./StatusVisibility"
+  import datepicker from "./datePicker";
+import  mixin from "../mixin"
   export default {
 
     data() {
@@ -244,8 +247,9 @@ import collapse from "./collapse";
     },
 
     components : {
-      collapse
+      categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker
     },
+
  mixins :[mixin]
   }
 </script>
@@ -261,7 +265,7 @@ import collapse from "./collapse";
 
   .contextmenu {
     position: absolute;
-    background-color: white;
+    background-color: #ff705e;
     color: #efd97d;
     border-radius: 2px;
     cursor: pointer;
@@ -275,14 +279,20 @@ import collapse from "./collapse";
     background-color: rgba(100, 100, 255, 0.5);
   }
 
-
   .last-event {
     color: white;
     background-color: rgba(100, 100, 255, 0.5);
     padding: 10px;
     border-radius: 2px;
   }
+  .sl-vue-tree-node:hover {
+    background-color: rgba(151, 179, 255, 0.98) !important;
 
+  }
+  .sl-vue-tree-selected > .sl-vue-tree-node-item{
+
+  background-color: #3273dc !important;
+}
   .tree-container {
     flex-grow: 1;
   }
@@ -292,6 +302,9 @@ import collapse from "./collapse";
     overflow-x: hidden;
     overflow-y: auto;
     height: 300px;
+    background-color: #ffffff !important;
+    border: none !important;
+    color: #4a4a4a;
   }
 
 
@@ -311,94 +324,3 @@ import collapse from "./collapse";
 
 
 </style>
-
-
-<!--  <div v-for="(find , index) in fruit" :key="index" >-->
-<!--    <div class="column">-->
-<!--      <label class="label lable-group"><b-icon icon="calendar-clock"></b-icon>ساخت منوی جدید</label>-->
-<!--    </div>-->
-<!--    <div class="columns menu-builder">-->
-<!--      <div class="column has-text-centered is-4">-->
-<!--        <b-field>-->
-<!--          <b-input placeholder="عنوان منو" size="is-small" icon="account"  v-model="find.id"></b-input>-->
-<!--        </b-field>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="columns menu-builder">-->
-<!--      <div class="column has-text-centered is-4">-->
-<!--        <b-field>-->
-<!--          <b-input placeholder="نام آیتم منو" size="is-small" icon="account"  v-model="find.name"></b-input>-->
-<!--        </b-field>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="columns menu-builder">-->
-<!--      <div class="column has-text-centered is-4">-->
-<!--        <b-field>-->
-<!--          <b-input placeholder="لینک" size="is-small" icon="account"  v-model="find.link"></b-input>-->
-<!--        </b-field>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="columns menu-builder">-->
-<!--      <div class="column has-text-centered is-4">-->
-<!--        <select :disabled='isDisabled'>-->
-<!--          <option v-for="(find , index) in fruit" :value="id">-->
-<!--            {{find.name}}-->
-<!--          </option>-->
-<!--        </select>-->
-<!--        <input type='checkbox' v-model='submenu' />-->
-<!--        <button @click="addFind">-->
-<!--          New Find-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--&lt;!&ndash;    <select :disabled="disabled == 1">&ndash;&gt;-->
-<!--&lt;!&ndash;      <option v-for="(find , index) in fruit" :value="id">&ndash;&gt;-->
-<!--&lt;!&ndash;        {{find.name}}&ndash;&gt;-->
-<!--&lt;!&ndash;      </option>&ndash;&gt;-->
-<!--&lt;!&ndash;    </select>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button @click="addFind">&ndash;&gt;-->
-<!--&lt;!&ndash;      New Find&ndash;&gt;-->
-<!--&lt;!&ndash;    </button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <input type="text" placeholder="Text" v-model="find.children[0].id">&ndash;&gt;-->
-
-<!--  </div>-->
-
-<!--  <select>-->
-<!--    <option v-for="(find , index) in fruit" :value="id">-->
-<!--      {{find.name}}-->
-<!--    </option>-->
-<!--  </select>-->
-<!--  <button @click="addFind">-->
-<!--    New Find-->
-<!--  </button>-->
-<!--  <button v-on:click= "removeRow"> X </button>-->
-
-<!--  <pre>{{ $data }}</pre>-->
-
-<!--<template>-->
-<!--  <div>-->
-<!--    <div v-for="(find , index) in finds" v-bind:key="index">-->
-<!--      <input v-model="find.value">-->
-<!--    </div>-->
-<!--    <button @click="addFind">-->
-<!--      New Find-->
-<!--    </button>-->
-<!--    <pre>{{ $data }}</pre>-->
-<!--  </div>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--  export default {-->
-<!--    data() {-->
-<!--      return {-->
-<!--        finds: []-->
-<!--      }-->
-<!--    },-->
-<!--    methods: {-->
-<!--      addFind: function () {-->
-<!--        this.finds.push({ value: '' });-->
-<!--      }-->
-<!--    }-->
-<!--  }-->
-<!--</script>-->

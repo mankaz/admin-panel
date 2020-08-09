@@ -59,7 +59,12 @@
         </div>
       </b-menu-item>
     </b-menu-list>
+    <button id="submit" @click="serialize">
+      New Find
+    </button>
   </b-menu>
+
+
 </template>
 
 <script>
@@ -75,25 +80,6 @@
 
     data() {
       return {
-
-        // dataNodes: [
-        //   {
-        //     title: 'kalam 🥦',
-        //     isExpanded: true
-        //   },
-        //   {
-        //     title: 'pear 🍐',
-        //     isLeaf: true,
-        //     data: {visible: false}
-        //   },
-        //   {
-        //     title: 'Grapes 🍇'
-        //   },
-        //   {
-        //     title: 'karrot 🥕',
-        //     isExpanded: true,
-        //   }
-        // ],
 
         isActive: true
       }
