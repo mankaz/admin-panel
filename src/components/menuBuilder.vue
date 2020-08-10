@@ -3,13 +3,17 @@
     <div class="column  is-10-desktop is-9-tablet  is-12-mobile">
       <div class="p-1">
         <div class="box">
-          <div class="column">
-            <label class="label lable-group">
-              <b-icon icon="calendar-clock"></b-icon>
-              تعیین زمان نمایش</label>
-          </div>
+
           <div class="columns is-centered">
             <div class="column has-text-centered is-5">
+              <label class="label lable-group">
+                <b-tooltip  label="می توانید با کشیدن و رها کردن مکان قرارگیری منو و زیرمنو را مشخص نمایید"
+                            position="is-top"
+                            :active="active">
+                  <b-icon icon="tooltip-text-outline"> </b-icon>
+                </b-tooltip>
+              ساختار منو
+              </label>
 
               <div @click="contextMenuIsVisible = false">
 
@@ -69,39 +73,36 @@
               </div>
             </div>
             <div class="column has-text-centered is-5">
+              <label class="label lable-group">
+                <b-icon icon="dots-vertical"></b-icon>
+                افزودن گزینه های منو</label>
               <div class="box">
 
                 <b-menu class="menu-collapse">
                   <b-menu-list>
+
                     <b-menu-item icon="settings" >
+
                       <template slot="label" slot-scope="props">
-                        برچسب ها
+                       پست ها
                         <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
                       </template>
-
-                      <div class="field categories-checkbox" v-for="(list , index) in dataNodes" :key="list.id">
-<!--                        <label>{{list.title}}</label>-->
-<!--                        <input id="check" type="checkbox" :name="list.text"  :value="list" />-->
-                        <div class="field b-checkbox checkbox"> <b-checkbox :native-value="list" :value="false" :name="list.text" type="is-info"> {{list.title}} </b-checkbox>
-                        </div>
-
-                      </div>
-                      <b-button @click="serialize" size="is-small" type="is-success">افزودن به منو</b-button>
-
+                      <childTab></childTab>
+                      <b-button class="confirmBtn" @click="serialize" size="is-small" type="is-success">افزودن به منو</b-button>
                     </b-menu-item>
                     <b-menu-item icon="settings" >
                       <template slot="label" slot-scope="props">
-                        دسته ها
+                      پیوند دلخواه
                         <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
                       </template>
-                      <div>
-                        <categoriesCheckbox></categoriesCheckbox>
+                      <b-field label="نشانی اینترنتی">
+                        <b-input v-model="name"></b-input>
+                      </b-field>
+                      <b-field label="متن پیوند">
+                        <b-input v-model="linkName"></b-input>
+                      </b-field>
+                      <b-button class="confirmBtn" @click="addLink" size="is-small" type="is-success">افزودن به منو</b-button>
 
-                      </div>
-                      <label class="label lable-group">افزودن گروه جدید  <b-icon icon="expand-all-outline"></b-icon></label>
-                      <categoriesName class="categories-name"></categoriesName>
-                      <categoriesSelectList class="categories-select"></categoriesSelectList>
-                      <b-button type="is-success" class="categoriesBtn">افزودن دسته جدید</b-button>
                     </b-menu-item>
                     <b-menu-item icon="settings" >
                       <template slot="label" slot-scope="props">
@@ -153,33 +154,35 @@
   import categoriesCheckbox from "./categoriesCheckbox"
   import StatusVisibility from "./StatusVisibility"
   import datepicker from "./datePicker";
-import  mixin from "../mixin"
+  import collapse from "./collapse";
+import  mixin from "../mixin.js"
+  import childTab from "./childTab";
   export default {
 
     data() {
       return {
 
-        nodes:[
-
-        ],
-        dataNodes: [
-          {
-            title: 'kalam 🥦',
-            isExpanded: true
-          },
-          {
-            title: 'pear 🍐',
-            isLeaf: true,
-            data: {visible: false}
-          },
-          {
-            title: 'Grapes 🍇'
-          },
-          {
-            title: 'karrot 🥕',
-            isExpanded: true,
-          }
-        ],
+        // nodes:[
+        //
+        // ],
+        // dataNodes: [
+        //   {
+        //     title: 'kalam 🥦',
+        //     isExpanded: true
+        //   },
+        //   {
+        //     title: 'pear 🍐',
+        //     isLeaf: true,
+        //     data: {visible: false}
+        //   },
+        //   {
+        //     title: 'Grapes 🍇'
+        //   },
+        //   {
+        //     title: 'karrot 🥕',
+        //     isExpanded: true,
+        //   }
+        // ],
 
         contextMenuIsVisible: false,
         lastEvent: 'No last event',
@@ -187,34 +190,20 @@ import  mixin from "../mixin"
       }
 
     },
+
     mounted() {
       // expose instance to the global namespace
       window.slVueTree = this.$refs.slVueTree;
+
     },
     methods: {
 
-//       serialize() {
-//
-//         let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
-//
-//         for (let i = 0; i < checkboxes.length; i++) {
-// alert(checkboxes[i]._value)
-//           console.log(JSON.stringify(checkboxes[i]._value))
-//           JSON.stringify(this.nodes.push(checkboxes[i]._value))
-//         }
-//       },
       toggleVisibility: function (event, node) {
         const slVueTree = this.$refs.slVueTree;
         event.stopPropagation();
         const visible = !node.data || node.data.visible !== false;
         slVueTree.updateNode(node.path, {data: {visible: !visible}});
         this.lastEvent = `Node ${node.title} is ${visible ? 'visible' : 'invisible'} now`;
-        // addFind: function () {
-        //   this.fruit.push({ id: '', name:'',link:'' });
-        // },
-        // removeRow(index){
-        //   this.fruit.splice(index); // why is this removing only the last row?
-        //
       },
 
       nodeSelected(nodes, event) {
@@ -247,7 +236,7 @@ import  mixin from "../mixin"
     },
 
     components : {
-      categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker
+      collapse,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datepicker,childTab
     },
 
  mixins :[mixin]

@@ -1340,21 +1340,3 @@ th {
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 0; }
-
-.menu-list {
-  line-height: 1.25; }
-  .menu-list a {
-    border-radius: 2px;
-    color: #4a4a4a;
-    display: block;
-    padding: 0.5em 0.75em; }
-    .menu-list a:hover {
-      background-color: whitesmoke;
-      color: #363636; }
-    .menu-list a.is-active {
-      background-color: #3273dc;
-      color: #fff; }
-  .menu-list li ul {
-    border-right: 0px solid #dbdbdb;
-    margin: 0.75em;
-    padding-right: 0.75em; }

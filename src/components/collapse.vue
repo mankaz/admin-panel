@@ -11,8 +11,11 @@
         <div v-for="(list , index) in dataNodes" :key="list.id">
           <label>{{list.title}}</label>
           <input id="check" type="checkbox" :name="list.text"  :value="list" />
-        </div>
 
+        </div>
+        <button id="submit" @click="serialize">
+          ارسال
+        </button>
 
       </b-menu-item>
       <b-menu-item icon="settings" >
@@ -59,9 +62,7 @@
         </div>
       </b-menu-item>
     </b-menu-list>
-    <button id="submit" @click="serialize">
-      New Find
-    </button>
+
   </b-menu>
 
 
@@ -80,6 +81,7 @@
 
     data() {
       return {
+
 
         isActive: true
       }

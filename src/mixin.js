@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-
+      linkName:'',
       nodes:[
 
       ],
@@ -24,9 +24,30 @@ export default {
           isExpanded: true,
         }
       ],
+      // dataNodes: [
+      //   {
+      //     title: 'kalam 🥦',
+      //     isExpanded: true
+      //   },
+      //   {
+      //     title: 'pear 🍐',
+      //     isLeaf: true,
+      //     data: {visible: false}
+      //   },
+      //   {
+      //     title: 'Grapes 🍇'
+      //   },
+      //   {
+      //     title: 'karrot 🥕',
+      //     isExpanded: true,
+      //   }
+      // ],
     }},
   created() {
-    this.serialize()
+    this.serialize();
+  },
+  watch : {
+
   },
 methods : {
   serialize() {
@@ -36,9 +57,15 @@ methods : {
     for (let i = 0; i < checkboxes.length; i++) {
       console.log(JSON.stringify(checkboxes[i]._value))
       JSON.stringify(this.nodes.push(checkboxes[i]._value))
+
     }
 
+
+  },
+  addLink: function () {
+    this.nodes.push({title: this.linkName ,isExpanded: true})
+  },
+
   }
-}
 
 }
