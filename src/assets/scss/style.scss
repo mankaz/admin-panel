@@ -1,32 +1,40 @@
 @import "font";
 @import "custom";
+
 html,
 body {
   height: 120%;
   background-color: $grey-lightest;
 }
+
 .px-1,
 .p-1 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+
 .py-1,
 .p-1 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.card-collapse{
+
+.card-collapse {
   border-radius: 2px !important;
 }
+
 .box-shadow-y {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
 }
-.menu-icon{
+
+.menu-icon {
   padding-left: 5px;
 }
+
 .input {
   font-family: $font_yekan !important;
 }
+
 .menu-container {
   position: fixed;
   direction: rtl;
@@ -51,124 +59,183 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .toggler {
   margin-left: 0;
   cursor: pointer;
 }
+
 .page-title {
   margin-top: 50px;
   direction: rtl;
 }
-.tab-panel{
+
+.tab-panel {
   background-color: $white;
   direction: rtl;
 }
+
 .menu-collapse {
 
   text-align: center !important;
   font-family: $font_yekan;
+
   li {
-    padding-bottom: 5px !important;
-    border-bottom: 1px solid #d8d8d8;
+    //padding-top: 5px !important;
+    //padding-bottom: 5px !important;
+    border-bottom: 1px solid #efefef;
   }
 }
-.panel-body-color{
+
+.menu-register {
+  margin-top: 1em;
+
+  input {
+    direction: rtl;
+  }
+}
+
+.content {
+  ul {
+    margin-left: 0 !important;
+    //margin-top: 2em;
+  }
+}
+
+.b-tooltip {
+  font-family: $font_IranSAns;
+}
+
+.panel-body-color {
   background-color: $white;
 }
-.panel-heading-align{
+
+.panel-heading-align {
   text-align: right;
   font-family: $font_yekan;
-  font-weight:$weight-bold2 !important;
+  font-weight: $weight-bold2 !important;
 }
-.title-align{
+
+.title-align {
   direction: rtl;
 }
-.categories-checkbox{
+
+.categories-checkbox {
   display: grid;
-  .control-label{
+
+  .control-label {
     padding: 10px;
   }
 }
+
 .checkbox {
   direction: rtl;
 }
-.categoriesBtn{
+
+.categoriesBtn {
   margin-top: 10px;
   font-family: $font_yekan;
 }
-.confirmBtn{
+
+.confirmBtn {
   font-family: $font_yekan;
 }
-.categories-name{
+
+.categories-name {
   direction: rtl;
   padding-bottom: 10px;
 }
-.categories-select{
+
+.categories-select {
   text-align: center;
-  text-align-last: center;}
-.ck-content {
-  height:300px;
+  text-align-last: center;
 }
-.vpd-input-group input{
+
+.ck-content {
+  height: 300px;
+}
+
+.vpd-input-group input {
   display: table-cell;
   border: 1px solid #dadada;
   border: none !important;
   line-height: 30px;
   padding: 0 10px
 }
-.visibility-option{
+
+.visibility-option {
   font-family: $font_yekan;
   direction: rtl;
 }
-.waiting{
+
+.waiting {
   text-align: end;
 }
 
-  .checkbox:not(.button) {
-    margin-right: 0 !important;
-  }
-.addtext-btn{
+.checkbox:not(.button) {
+  margin-right: 0 !important;
+}
+
+.addtext-btn {
   font-family: $font_IranSAns;
 }
+
 .lable-group {
   margin-top: 30px;
   direction: rtl;
   font-family: $font_IranSAns;
+  text-align: start;
+}
+.btn-register {
+  margin-top: 1em;
+  .btn {
+    font-family: $font_IranSAns;
+  }
 }
 
 .menu-list {
   li {
-ul{
-  border-right: $menu-list-border-right;
-  border-left: $menu-list-border-right !important;
-  font-family: $font_IranSAns;
-}
-    a{
-      span.menu-label{
-letter-spacing: 0;
+    list-style: none;
+
+    ul {
+      margin-top: 0 !important;
+      border-right: $menu-list-border-right;
+      border-left: $menu-list-border-right !important;
+      font-family: $font_IranSAns;
+    }
+
+    a {
+      text-decoration: none !important;
+
+      span.menu-label {
+        letter-spacing: 0;
+
       }
     }
   }
-  .is-active{
-    span.menu-label{
+
+  .is-active {
+    span.menu-label {
       color: $white !important;
     }
   }
-    a.is-active{
-      background-color:$purple !important;
-      color: $white !important;
+
+  a.is-active {
+    background-color: $purple !important;
+    color: $white !important;
   }
 }
 
 .tabs {
-  ul{
-    li{
-      a{
+  ul {
+    li {
+      a {
         direction: rtl;
       }
     }
   }
 }
+
 .avatar {
   border-radius: 50%;
   height: 50px;
@@ -181,25 +248,30 @@ letter-spacing: 0;
   box-shadow: none;
   margin: 10px;
 }
+
 .arrow-down {
   margin-left: 2px;
   margin-top: 2px;
 }
-.menu-builder{
+
+.menu-builder {
   justify-content: flex-end;
+
   input {
     text-align: center !important;
   }
-  span{
+
+  span {
     direction: rtl;
   }
 }
+
 // Variables
 $primary: #004bef;
 $secondary: #ffaa1a;
 $primary-text: #121212;
 $secondary-text: #dbdbdb;
-$body-bg:#fafafa;
+$body-bg: #fafafa;
 // Mixins
 @mixin d-flex {
   display: flex;
@@ -288,12 +360,14 @@ ul {
   height: 100%;
   border-right: 1px solid #eeeeee;
   transition: all .4s ease-in-out;
+
   header {
     padding: 2em;
     transition: all .4s ease-in-out;
     @media screen and (max-width: 768px) {
       padding: 1em;
     }
+
     a {
       width: 40px;
       height: 40px;
@@ -305,6 +379,7 @@ ul {
       @include drop-shadow();
     }
   }
+
   .menu {
     .menu-item {
       @include d-flex();
@@ -315,21 +390,25 @@ ul {
       font-size: 14px;
       font-weight: 500;
       transition: all .4s ease-in-out;
+
       &:hover,
       &.active {
         background-color: lighten($grey, 25);
         color: $grey;
       }
-      @media screen and (max-width:768px) {
+
+      @media screen and (max-width: 768px) {
         padding: 1em;
         @include d-flex-h-center();
       }
     }
   }
+
   .menu-icon {
     width: 30px;
     text-align: center;
   }
+
   .menu-label {
     font-size: 300px !important;
     padding-left: 10px;
@@ -339,7 +418,8 @@ ul {
       position: absolute;
     }
   }
-  @media screen and (max-width:768px) {
+
+  @media screen and (max-width: 768px) {
     max-width: 70px;
   }
 }
@@ -359,12 +439,14 @@ ul {
   @include d-flex-between();
   max-height: 70px;
   border-bottom: 1px solid #eeeeee;
+
   .searchbar {
     padding: 0 2em;
     color: $secondary-text;
     @include flex-grow();
     @include d-flex();
     @include d-flex-v-center();
+
     input {
       border: 0;
       padding: 5px;
@@ -374,6 +456,7 @@ ul {
       outline: none;
       @include flex-grow();
       margin-left: 10px;
+
       &::-webkit-input-placeholder {
         font-weight: 700;
         font-size: 16px;
@@ -381,17 +464,20 @@ ul {
       }
     }
   }
+
   .notification-bell {
     padding: 1.5em;
     border-left: 1px solid #eeeeee;
     border-right: 1px solid #eeeeee;
     color: darken($secondary-text, 35);
   }
+
   .user-info {
     padding: 0 2em 0 1em;
     @include d-flex();
     @include d-flex-v-center();
     position: relative;
+
     &::before,
     &::after {
       content: "";
@@ -403,21 +489,25 @@ ul {
       background-color: #dbdbdb;
       border-radius: 4px;
     }
+
     &::before {
       transform: rotate(45deg) translateY(-3px);
     }
+
     &::after {
       transform: rotate(-45deg) translateY(-3px);
     }
+
     .user-avatar {
       width: 100px;
-      height:100px;
+      height: 100px;
       border-radius: 50%;
       background-color: $secondary;
       color: #ffffff;
       font-size: 14px;
 
     }
+
     .user-name {
       font-size: 14px;
       font-weight: 500;
@@ -431,27 +521,29 @@ ul {
 .p-1 {
   padding: 1em;
 }
+
 .sidebar-page {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100%;
-  font-family:$font_yekan !important;
+  font-family: $font_yekan !important;
   // min-height: 100vh;
   .sidebar-layout {
     display: flex;
     flex-direction: row;
     min-height: 100%;
-    font-family:$font_yekan !important;
+    font-family: $font_yekan !important;
     // min-height: 100vh;
   }
 
 }
 
-.sidebar-content{
+.sidebar-content {
   width: 15% !important;
-text-align: center;
+  text-align: center;
   background-color: $white !important;
+
   .menu-item {
     direction: rtl;
     color: $primary-text;
@@ -465,15 +557,18 @@ text-align: center;
       background-color: lighten($grey-light, 25);
       color: $primary;
     }
-    @media screen and (max-width:768px) {
+
+    @media screen and (max-width: 768px) {
       padding: 1em;
       @include d-flex-h-center();
     }
   }
+
   .menu-list {
-    ul{
+    ul {
       border-right: 1px !important;
     }
+
     direction: rtl;
   }
 }
@@ -491,8 +586,10 @@ text-align: center;
                   display: none;
                 }
               }
+
               ul {
                 padding-left: 0;
+
                 li {
                   a {
                     display: inline-block;
@@ -501,6 +598,7 @@ text-align: center;
               }
             }
           }
+
           .menu-label:not(:last-child) {
             margin-bottom: 0;
           }
@@ -509,6 +607,7 @@ text-align: center;
     }
   }
 }
+
 @media screen and (min-width: 1024px) {
   .b-sidebar {
     .sidebar-content {
@@ -522,8 +621,10 @@ text-align: center;
                   display: none;
                 }
               }
+
               ul {
                 padding-left: 0;
+
                 li {
                   a {
                     display: inline-block;
@@ -532,6 +633,7 @@ text-align: center;
               }
             }
           }
+
           .menu-label:not(:last-child) {
             margin-bottom: 0;
           }

@@ -3,16 +3,6 @@
     <b-tabs type="is-boxed" size="is-small" :position="atRight ? 'is-right' : 'true'">
       <b-tab-item label="فایل" icon="file-upload-outline">
         <div class="column">
-<draggable></draggable>
-        </div>
-      </b-tab-item>
-      <b-tab-item label="فایل" icon="file-upload-outline">
-        <div class="column">
-          <menuBuilderVueDraggable></menuBuilderVueDraggable>
-        </div>
-      </b-tab-item>
-      <b-tab-item label="فایل" icon="file-upload-outline">
-        <div class="column">
           <label class="label lable-group"><b-icon icon="file-upload-outline"></b-icon>بارگذاری فایل</label>
         </div>
         <div class="columns is-centered">
@@ -64,7 +54,7 @@
       </b-tab-item>
 
       <b-tab-item label="متن" icon="video" v-model="activeTab">
-            <div class="column is-12-desktop is-6-tablet">
+            <div class="column is-12-desktop is-12-tablet is-10-mobile">
               <div  class="box">
                 <div class="columns">
                   <div class="column">
@@ -123,8 +113,7 @@
   import datePicker from "./datePicker";
   import upload from "./upload";
   import Editor from '@tinymce/tinymce-vue'
-  import menuBuilderVueDraggable from "./menuBuilderVueDraggable";
-  import Draggable from "./draggable";
+
 
   export default {
     data() {
@@ -142,8 +131,6 @@
         type: null,
       }
     },
-    components : {
-      Draggable,
-      menuBuilderVueDraggable,Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
+    components : {Editor,tagInput,titleText,textDate,categoriesName,categoriesSelectList,categoriesCheckbox,StatusVisibility,datePicker,upload}
   }
 </script>

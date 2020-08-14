@@ -31,6 +31,18 @@
 .subtitle:not(:last-child) {
   margin-bottom: 1.5rem; }
 
+.control.is-loading::after {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid #dbdbdb;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em; }
+
 .card {
   background-color: white;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -53,8 +65,8 @@
   color: #363636;
   display: flex;
   flex-grow: 1;
-  font-weight: 200;
-  font-family: "Yekan";
+  font-weight: 400 !important;
+  font-family: "IRANSans";
   padding: 0.75rem 1rem; }
   .card-header-title.is-centered {
     justify-content: center; }
@@ -72,7 +84,7 @@
 
 .card-content {
   background-color: transparent;
-  padding: 1.5rem;
+  padding: 0 !important;
   direction: rtl;
   font-family: "IRANSans"; }
 
@@ -83,6 +95,7 @@
   display: flex; }
 
 .card-footer-item {
+  font-family: "IRANSans";
   align-items: center;
   display: flex;
   flex-basis: 0;
@@ -107,7 +120,7 @@
     overflow-y: auto; }
 
 .message {
-  background-color: whitesmoke;
+  background-color: whitesmoke !important;
   border-radius: 4px;
   font-size: 1.1rem; }
   .message strong {
@@ -125,35 +138,40 @@
     background-color: white; }
     .message.is-white .message-header {
       background-color: white;
-      color: #0a0a0a; }
+      color: #0a0a0a;
+      justify-content: flex-start; }
     .message.is-white .message-body {
       border-color: white; }
   .message.is-black {
     background-color: #fafafa; }
     .message.is-black .message-header {
       background-color: #0a0a0a;
-      color: white; }
+      color: white;
+      justify-content: flex-start; }
     .message.is-black .message-body {
       border-color: #0a0a0a; }
   .message.is-light {
     background-color: #fafafa; }
     .message.is-light .message-header {
       background-color: whitesmoke;
-      color: rgba(0, 0, 0, 0.7); }
+      color: rgba(0, 0, 0, 0.7);
+      justify-content: flex-start; }
     .message.is-light .message-body {
       border-color: whitesmoke; }
   .message.is-dark {
     background-color: #fafafa; }
     .message.is-dark .message-header {
       background-color: #363636;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-dark .message-body {
       border-color: #363636; }
   .message.is-primary {
     background-color: #ebfffc; }
     .message.is-primary .message-header {
       background-color: #00d1b2;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-primary .message-body {
       border-color: #00d1b2;
       color: #00947e; }
@@ -161,7 +179,8 @@
     background-color: #eef3fc; }
     .message.is-link .message-header {
       background-color: #3273dc;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-link .message-body {
       border-color: #3273dc;
       color: #2160c4; }
@@ -169,7 +188,8 @@
     background-color: #eef6fc; }
     .message.is-info .message-header {
       background-color: #3298dc;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-info .message-body {
       border-color: #3298dc;
       color: #1d72aa; }
@@ -177,7 +197,8 @@
     background-color: #effaf3; }
     .message.is-success .message-header {
       background-color: #48c774;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-success .message-body {
       border-color: #48c774;
       color: #257942; }
@@ -185,7 +206,8 @@
     background-color: #fffbeb; }
     .message.is-warning .message-header {
       background-color: #ffdd57;
-      color: rgba(0, 0, 0, 0.7); }
+      color: rgba(0, 0, 0, 0.7);
+      justify-content: flex-start; }
     .message.is-warning .message-body {
       border-color: #ffdd57;
       color: #947600; }
@@ -193,7 +215,8 @@
     background-color: #feecf0; }
     .message.is-danger .message-header {
       background-color: #f14668;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-danger .message-body {
       border-color: #f14668;
       color: #cc0f35; }
@@ -201,12 +224,12 @@
 .message-header {
   align-items: center;
   direction: rtl;
-  font-family: "Yekan";
+  font-family: "IRANSans";
   background-color: #4a4a4a;
   border-radius: 4px 4px 0 0;
   color: #fff;
   display: flex;
-  font-weight: 400;
+  font-weight: 400 !important;
   justify-content: space-between;
   line-height: 1.25;
   padding: 0.75em 1em;
@@ -1340,3 +1363,243 @@ th {
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 0; }
+
+.menu-list {
+  line-height: 1.25; }
+  .menu-list a {
+    border-radius: 2px;
+    color: #4a4a4a;
+    display: block;
+    padding: 0.5em 0.75em; }
+    .menu-list a:hover {
+      background-color: whitesmoke;
+      color: #363636; }
+    .menu-list a.is-active {
+      background-color: #3273dc;
+      color: #fff; }
+  .menu-list li ul {
+    border-right: 0px solid #dbdbdb;
+    margin: 0.75em;
+    padding-right: 0.75em; }
+
+.label {
+  color: #363636;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 400 !important; }
+  .label:not(:last-child) {
+    margin-bottom: 0.5em; }
+  .label.is-small {
+    font-size: 1rem; }
+  .label.is-medium {
+    font-size: 1.25rem; }
+  .label.is-large {
+    font-size: 1.5rem; }
+
+.help {
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.25rem; }
+  .help.is-white {
+    color: white; }
+  .help.is-black {
+    color: #0a0a0a; }
+  .help.is-light {
+    color: whitesmoke; }
+  .help.is-dark {
+    color: #363636; }
+  .help.is-primary {
+    color: #00d1b2; }
+  .help.is-link {
+    color: #3273dc; }
+  .help.is-info {
+    color: #3298dc; }
+  .help.is-success {
+    color: #48c774; }
+  .help.is-warning {
+    color: #ffdd57; }
+  .help.is-danger {
+    color: #f14668; }
+
+.field:not(:last-child) {
+  margin-bottom: 0.75rem; }
+
+.field.has-addons {
+  display: flex;
+  justify-content: flex-start; }
+  .field.has-addons .control:not(:last-child) {
+    margin-left: -1px; }
+  .field.has-addons .control:not(:first-child):not(:last-child) .button,
+  .field.has-addons .control:not(:first-child):not(:last-child) .input,
+  .field.has-addons .control:not(:first-child):not(:last-child) .select select {
+    border-radius: 0; }
+  .field.has-addons .control:first-child:not(:only-child) .button,
+  .field.has-addons .control:first-child:not(:only-child) .input,
+  .field.has-addons .control:first-child:not(:only-child) .select select {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0; }
+  .field.has-addons .control:last-child:not(:only-child) .button,
+  .field.has-addons .control:last-child:not(:only-child) .input,
+  .field.has-addons .control:last-child:not(:only-child) .select select {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0; }
+  .field.has-addons .control .button:not([disabled]):hover, .field.has-addons .control .button:not([disabled]).is-hovered,
+  .field.has-addons .control .input:not([disabled]):hover,
+  .field.has-addons .control .input:not([disabled]).is-hovered,
+  .field.has-addons .control .select select:not([disabled]):hover,
+  .field.has-addons .control .select select:not([disabled]).is-hovered {
+    z-index: 2; }
+  .field.has-addons .control .button:not([disabled]):focus, .field.has-addons .control .button:not([disabled]).is-focused, .field.has-addons .control .button:not([disabled]):active, .field.has-addons .control .button:not([disabled]).is-active,
+  .field.has-addons .control .input:not([disabled]):focus,
+  .field.has-addons .control .input:not([disabled]).is-focused,
+  .field.has-addons .control .input:not([disabled]):active,
+  .field.has-addons .control .input:not([disabled]).is-active,
+  .field.has-addons .control .select select:not([disabled]):focus,
+  .field.has-addons .control .select select:not([disabled]).is-focused,
+  .field.has-addons .control .select select:not([disabled]):active,
+  .field.has-addons .control .select select:not([disabled]).is-active {
+    z-index: 3; }
+    .field.has-addons .control .button:not([disabled]):focus:hover, .field.has-addons .control .button:not([disabled]).is-focused:hover, .field.has-addons .control .button:not([disabled]):active:hover, .field.has-addons .control .button:not([disabled]).is-active:hover,
+    .field.has-addons .control .input:not([disabled]):focus:hover,
+    .field.has-addons .control .input:not([disabled]).is-focused:hover,
+    .field.has-addons .control .input:not([disabled]):active:hover,
+    .field.has-addons .control .input:not([disabled]).is-active:hover,
+    .field.has-addons .control .select select:not([disabled]):focus:hover,
+    .field.has-addons .control .select select:not([disabled]).is-focused:hover,
+    .field.has-addons .control .select select:not([disabled]):active:hover,
+    .field.has-addons .control .select select:not([disabled]).is-active:hover {
+      z-index: 4; }
+  .field.has-addons .control.is-expanded {
+    flex-grow: 1;
+    flex-shrink: 1; }
+  .field.has-addons.has-addons-centered {
+    justify-content: center; }
+  .field.has-addons.has-addons-right {
+    justify-content: flex-end; }
+  .field.has-addons.has-addons-fullwidth .control {
+    flex-grow: 1;
+    flex-shrink: 0; }
+
+.field.is-grouped {
+  display: flex;
+  justify-content: flex-start; }
+  .field.is-grouped > .control {
+    flex-shrink: 0; }
+    .field.is-grouped > .control:not(:last-child) {
+      margin-bottom: 0;
+      margin-left: 0.75rem; }
+    .field.is-grouped > .control.is-expanded {
+      flex-grow: 1;
+      flex-shrink: 1; }
+  .field.is-grouped.is-grouped-centered {
+    justify-content: center; }
+  .field.is-grouped.is-grouped-right {
+    justify-content: flex-end; }
+  .field.is-grouped.is-grouped-multiline {
+    flex-wrap: wrap; }
+    .field.is-grouped.is-grouped-multiline > .control:last-child, .field.is-grouped.is-grouped-multiline > .control:not(:last-child) {
+      margin-bottom: 0.75rem; }
+    .field.is-grouped.is-grouped-multiline:last-child {
+      margin-bottom: -0.75rem; }
+    .field.is-grouped.is-grouped-multiline:not(:last-child) {
+      margin-bottom: 0; }
+
+@media screen and (min-width: 769px), print {
+  .field.is-horizontal {
+    display: flex; } }
+
+.field-label .label {
+  font-size: inherit; }
+
+@media screen and (max-width: 768px) {
+  .field-label {
+    margin-bottom: 0.5rem; } }
+
+@media screen and (min-width: 769px), print {
+  .field-label {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-left: 1.5rem;
+    text-align: right; }
+    .field-label.is-small {
+      font-size: 1rem;
+      padding-top: 0.375em; }
+    .field-label.is-normal {
+      padding-top: 0.375em; }
+    .field-label.is-medium {
+      font-size: 1.25rem;
+      padding-top: 0.375em; }
+    .field-label.is-large {
+      font-size: 1.5rem;
+      padding-top: 0.375em; } }
+
+.field-body .field .field {
+  margin-bottom: 0; }
+
+@media screen and (min-width: 769px), print {
+  .field-body {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 5;
+    flex-shrink: 1; }
+    .field-body .field {
+      margin-bottom: 0; }
+    .field-body > .field {
+      flex-shrink: 1; }
+      .field-body > .field:not(.is-narrow) {
+        flex-grow: 1; }
+      .field-body > .field:not(:last-child) {
+        margin-left: 0.75rem; } }
+
+.control {
+  box-sizing: border-box;
+  clear: both;
+  font-size: 1.1rem;
+  position: relative;
+  text-align: inherit; }
+  .control.has-icons-left .input:focus ~ .icon,
+  .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon,
+  .control.has-icons-right .select:focus ~ .icon {
+    color: #4a4a4a; }
+  .control.has-icons-left .input.is-small ~ .icon,
+  .control.has-icons-left .select.is-small ~ .icon, .control.has-icons-right .input.is-small ~ .icon,
+  .control.has-icons-right .select.is-small ~ .icon {
+    font-size: 1rem; }
+  .control.has-icons-left .input.is-medium ~ .icon,
+  .control.has-icons-left .select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon,
+  .control.has-icons-right .select.is-medium ~ .icon {
+    font-size: 1.25rem; }
+  .control.has-icons-left .input.is-large ~ .icon,
+  .control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon,
+  .control.has-icons-right .select.is-large ~ .icon {
+    font-size: 1.5rem; }
+  .control.has-icons-left .icon, .control.has-icons-right .icon {
+    color: #dbdbdb;
+    height: 2.5em;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.5em;
+    z-index: 4; }
+  .control.has-icons-left .input,
+  .control.has-icons-left .select select {
+    padding-left: 2.5em; }
+  .control.has-icons-left .icon.is-left {
+    left: 0; }
+  .control.has-icons-right .input,
+  .control.has-icons-right .select select {
+    padding-right: 2.5em; }
+  .control.has-icons-right .icon.is-right {
+    right: 0; }
+  .control.is-loading::after {
+    position: absolute !important;
+    left: 0.625em;
+    top: 0.625em;
+    z-index: 4; }
+  .control.is-loading.is-small:after {
+    font-size: 1rem; }
+  .control.is-loading.is-medium:after {
+    font-size: 1.25rem; }
+  .control.is-loading.is-large:after {
+    font-size: 1.5rem; }

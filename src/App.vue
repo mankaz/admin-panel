@@ -75,6 +75,7 @@
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
+
       <navbar></navbar>
       <sideBar></sideBar>
     <router-view></router-view>

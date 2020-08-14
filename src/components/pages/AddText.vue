@@ -8,7 +8,7 @@
 
         <div class="columns is-variable">
 
-          <div class="column is-12-desktop is-6-tablet">
+          <div class="column is-12-desktop is-12-tablet is-10-mobile">
             <div class="box">
               <tabs></tabs>
 

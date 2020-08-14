@@ -75,7 +75,7 @@
   color: #363636;
   display: flex;
   flex-grow: 1;
-  font-weight: 200;
+  font-weight: 400 !important;
   font-family: "Yekan";
   padding: 0.75rem 1rem; }
   .card-header-title.is-centered {
@@ -94,7 +94,7 @@
 
 .card-content {
   background-color: transparent;
-  padding: 1.5rem;
+  padding: 0 !important;
   direction: rtl;
   font-family: "IRANSans"; }
 
@@ -105,6 +105,7 @@
   display: flex; }
 
 .card-footer-item {
+  font-family: "IRANSans";
   align-items: center;
   display: flex;
   flex-basis: 0;
@@ -129,7 +130,7 @@
     overflow-y: auto; }
 
 .message {
-  background-color: whitesmoke;
+  background-color: whitesmoke !important;
   border-radius: 4px;
   font-size: 1.1rem; }
   .message strong {
@@ -147,35 +148,40 @@
     background-color: white; }
     .message.is-white .message-header {
       background-color: white;
-      color: #0a0a0a; }
+      color: #0a0a0a;
+      justify-content: flex-start; }
     .message.is-white .message-body {
       border-color: white; }
   .message.is-black {
     background-color: #fafafa; }
     .message.is-black .message-header {
       background-color: #0a0a0a;
-      color: white; }
+      color: white;
+      justify-content: flex-start; }
     .message.is-black .message-body {
       border-color: #0a0a0a; }
   .message.is-light {
     background-color: #fafafa; }
     .message.is-light .message-header {
       background-color: whitesmoke;
-      color: rgba(0, 0, 0, 0.7); }
+      color: rgba(0, 0, 0, 0.7);
+      justify-content: flex-start; }
     .message.is-light .message-body {
       border-color: whitesmoke; }
   .message.is-dark {
     background-color: #fafafa; }
     .message.is-dark .message-header {
       background-color: #363636;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-dark .message-body {
       border-color: #363636; }
   .message.is-primary {
     background-color: #ebfffc; }
     .message.is-primary .message-header {
       background-color: #00d1b2;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-primary .message-body {
       border-color: #00d1b2;
       color: #00947e; }
@@ -183,7 +189,8 @@
     background-color: #eef3fc; }
     .message.is-link .message-header {
       background-color: #3273dc;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-link .message-body {
       border-color: #3273dc;
       color: #2160c4; }
@@ -191,7 +198,8 @@
     background-color: #eef6fc; }
     .message.is-info .message-header {
       background-color: #3298dc;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-info .message-body {
       border-color: #3298dc;
       color: #1d72aa; }
@@ -199,7 +207,8 @@
     background-color: #effaf3; }
     .message.is-success .message-header {
       background-color: #48c774;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-success .message-body {
       border-color: #48c774;
       color: #257942; }
@@ -207,7 +216,8 @@
     background-color: #fffbeb; }
     .message.is-warning .message-header {
       background-color: #ffdd57;
-      color: rgba(0, 0, 0, 0.7); }
+      color: rgba(0, 0, 0, 0.7);
+      justify-content: flex-start; }
     .message.is-warning .message-body {
       border-color: #ffdd57;
       color: #947600; }
@@ -215,7 +225,8 @@
     background-color: #feecf0; }
     .message.is-danger .message-header {
       background-color: #f14668;
-      color: #fff; }
+      color: #fff;
+      justify-content: flex-start; }
     .message.is-danger .message-body {
       border-color: #f14668;
       color: #cc0f35; }
@@ -223,12 +234,12 @@
 .message-header {
   align-items: center;
   direction: rtl;
-  font-family: "Yekan";
+  font-family: "IRANSans";
   background-color: #4a4a4a;
   border-radius: 4px 4px 0 0;
   color: #fff;
   display: flex;
-  font-weight: 400;
+  font-weight: 400 !important;
   justify-content: space-between;
   line-height: 1.25;
   padding: 0.75em 1em;
@@ -1462,8 +1473,18 @@ body {
   text-align: center !important;
   font-family: "Yekan"; }
   .menu-collapse li {
-    padding-bottom: 5px !important;
-    border-bottom: 1px solid #d8d8d8; }
+    border-bottom: 1px solid #efefef; }
+
+.menu-register {
+  margin-top: 1em; }
+  .menu-register input {
+    direction: rtl; }
+
+.content ul {
+  margin-left: 0 !important; }
+
+.b-tooltip {
+  font-family: IRANSans; }
 
 .panel-body-color {
   background-color: white; }
@@ -1525,14 +1546,25 @@ body {
 .lable-group {
   margin-top: 30px;
   direction: rtl;
-  font-family: IRANSans; }
+  font-family: IRANSans;
+  text-align: start; }
 
-.menu-list li ul {
-  border-right: 0px solid #dbdbdb;
-  border-left: 0px solid #dbdbdb !important;
-  font-family: IRANSans; }
-.menu-list li a span.menu-label {
-  letter-spacing: 0; }
+.btn-register {
+  margin-top: 1em; }
+  .btn-register .btn {
+    font-family: IRANSans; }
+
+.menu-list li {
+  list-style: none; }
+  .menu-list li ul {
+    margin-top: 0 !important;
+    border-right: 0px solid #dbdbdb;
+    border-left: 0px solid #dbdbdb !important;
+    font-family: IRANSans; }
+  .menu-list li a {
+    text-decoration: none !important; }
+    .menu-list li a span.menu-label {
+      letter-spacing: 0; }
 .menu-list .is-active span.menu-label {
   color: white !important; }
 .menu-list a.is-active {

@@ -10,7 +10,7 @@ $card-header-weight: $weight-bold !default
 $card-header-weight2: $weight-bold2 !default
 
 $card-content-background-color: transparent !default
-$card-content-padding: 1.5rem !default
+$card-content-padding: 0 !default
 
 $card-footer-background-color: transparent !default
 $card-footer-border-top: 1px solid $border-light !default
@@ -39,8 +39,8 @@ $card-media-margin: $block-spacing !default
   color: $card-header-color
   display: flex
   flex-grow: 1
-  font-weight: $card-header-weight2
-  font-family: $font-yekan
+  font-weight: $card-header-weight !important
+  font-family: $iransans-font
   padding: $card-header-padding
   &.is-centered
     justify-content: center
@@ -58,9 +58,10 @@ $card-media-margin: $block-spacing !default
 
 .card-content
   background-color: $card-content-background-color
-  padding: $card-content-padding
+  padding: $card-content-padding !important
   direction: rtl
   font-family: $iransans-font
+
 
 .card-footer
   background-color: $card-footer-background-color
@@ -69,6 +70,7 @@ $card-media-margin: $block-spacing !default
   display: flex
 
 .card-footer-item
+  font-family: $iransans-font
   align-items: center
   display: flex
   flex-basis: 0
