@@ -12,7 +12,7 @@
   "dependencies": {
     "@tinymce/tinymce-vue": "^3.2.2",
     "@websanova/vue-store": "^1.0.5-beta",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "buefy": "^0.8.20",
     "bulma-accordion": "^2.0.1",
     "d": "^1.0.1",
